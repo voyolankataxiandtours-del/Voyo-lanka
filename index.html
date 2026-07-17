@@ -86,19 +86,36 @@
       box-shadow: 0 20px 40px rgba(0, 0, 0, .15);
     }
 
-    .scroll {
-      position: absolute;
-      bottom: 38px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 20;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      color: white;
-      transition: opacity .45s ease, transform .45s ease;
+   .scroll{
+    position:absolute;
+    bottom:40px;
+    left:50%;
+    transform:translateX(-50%);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    color:white;
+    z-index:30;
+    transition:opacity .45s ease, transform .45s ease;
+}
+
+/* Mobile only */
+@media (max-width:768px){
+    .scroll{
+        bottom:15px; /* move it lower */
     }
 
+    .mouse{
+        width:28px;
+        height:48px;
+    }
+
+    .scroll p{
+        font-size:11px;
+        letter-spacing:3px;
+        margin-top:8px;
+    }
+}
     .scroll.hide {
       opacity: 0;
       transform: translate(-50%, 18px);

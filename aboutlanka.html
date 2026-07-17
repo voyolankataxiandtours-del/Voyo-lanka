@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>About Sri Lanka</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<style>
+.hero{
+
+background-image:url("/assets/about pic.png");
+background-size:cover;
+background-position:center center;
+background-repeat:no-repeat;
+
+min-height:100vh;
+width:100%;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+position:relative;
+overflow:hidden;
+
+}
+
+/* Mobile Hero */
+
+@media (max-width:768px){
+
+.hero{
+
+min-height:70vh;
+
+/* Remove fixed background on phones */
+background-attachment:scroll;
+
+/* Better crop for phones */
+background-position:center center;
+
+}
+
+}
+
+.hero::after{
+content:"";
+position:absolute;
+
+inset:0;
+}
+
+.card{
+transition:.45s;
+}
+
+.card:hover{
+transform:
+translateY(-10px);
+}
+
+.glass{
+background:rgba(255,255,255,.12);
+
+backdrop-filter:
+blur(18px);
+
+border:
+1px solid rgba(255,255,255,.2);
+}
+
+.scroll{
+position:absolute;
+
+bottom:40px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+color:white;
+
+z-index:30;
+
+/* NEW */
+transition:
+opacity .45s ease,
+transform .45s ease;
+}
+
+.scroll.hide{
+opacity:0;
+
+transform:
+translate(-50%,20px);
+
+pointer-events:none;
+}
+
+.mouse{
+
+width:32px;
+
+height:54px;
+
+border:2px solid white;
+
+border-radius:30px;
+
+position:relative;
+}
+
+.mouse::before{
+
+content:"";
+
+width:6px;
+
+height:10px;
+
+background:white;
+
+border-radius:20px;
+
+position:absolute;
+
+left:50%;
+
+top:10px;
+
+transform:
+translateX(-50%);
+
+animation:
+scroll 2s infinite;
+
+}
+
+@keyframes scroll{
+
+0%{
+opacity:0;
+transform:
+translate(-50%,0);
+}
+
+50%{
+opacity:1;
+}
+
+100%{
+opacity:0;
+
+transform:
+translate(-50%,18px);
+}
+
+}
+
+.fadeup{
+
+animation:
+fadeup 1.5s ease;
+
+}
+
+@keyframes fadeup{
+
+from{
+opacity:0;
+transform:
+translateY(40px);
+}
+
+to{
+opacity:1;
+transform:
+translateY(0);
+}
+
+}
+
+.card {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  will-change: transform;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+/* image zoom inside card */
+.card img {
+  transition: transform 0.6s ease;
+}
+
+.card:hover img {
+  transform: scale(1.1);
+}
+
+/* fade-up entrance animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+
+</head>
+
+<body class="bg-gray-50 text-gray-800 pattern">
+
+<!-- NAV -->
+<header class="fixed top-0 left-0 w-full z-50 bg-white/70 backdrop-blur-md shadow-sm">
+
+<div class="max-w-[1300px] mx-auto flex justify-between items-center px-4 lg:px-6 py-3">
+
+<a href="index.html">
+<h1 class="font-bold text-lg">LOGO</h1>
+</a>
+
+<!-- Desktop -->
+
+<nav class="hidden md:flex gap-6 text-sm text-gray-600">
+
+<a href="index.html" class="hover:text-black">Home</a>
+<a href="aboutlanka.html" class="hover:text-black font-semibold">About Sri Lanka</a>
+<a href="daytour.html" class="hover:text-black">Day Tours</a>
+<a href="roundtour.html" class="hover:text-black">Round Tours</a>
+<a href="tailormade.html" class="hover:text-black">Design Your Journey</a>
+<a href="pickupdrop.html" class="hover:text-black">Pickup & Drop</a>
+<a href="accommodation.html" class="hover:text-black">Accommodation</a>
+<a href="vehicles.html" class="hover:text-black">Vehicles</a>
+<a href="gallery.html" class="hover:text-black">Gallery</a>
+<a href="contact.html" class="hover:text-black">Contact</a>
+
+</nav>
+
+<a href="contact.html"
+class="hidden md:block bg-black text-white px-4 py-2 rounded">
+Book Now
+</a>
+
+<button id="menuBtn" class="md:hidden">
+
+<i data-lucide="menu" class="w-8 h-8"></i>
+
+</button>
+
+</div>
+
+</header>
+
+<!-- MOBILE MENU -->
+
+<div id="mobileMenu"
+class="fixed inset-0 bg-black/40 backdrop-blur-md z-[999] opacity-0 invisible transition-all duration-300">
+
+<div id="menuPanel"
+class="absolute right-0 top-0 h-full w-[320px] bg-white shadow-2xl translate-x-full transition-transform duration-300">
+
+<div class="flex items-center justify-between p-6 border-b">
+
+<h2 class="font-bold text-xl">
+
+VOYO LANKA
+
+</h2>
+
+<button id="closeMenu">
+
+<i data-lucide="x" class="w-7 h-7"></i>
+
+</button>
+
+</div>
+
+<nav class="flex flex-col p-6 text-lg">
+
+<a href="index.html" class="flex items-center gap-4 py-3">
+    <i data-lucide="house" class="w-5 h-5 flex-shrink-0"></i>
+    <span>Home</span>
+</a>
+
+<a href="aboutlanka.html" class="flex items-center gap-4 py-3 font-semibold">
+    <i data-lucide="palmtree" class="w-5 h-5 flex-shrink-0"></i>
+    <span>About Sri Lanka</span>
+</a>
+
+<a href="daytour.html" class="flex items-center gap-4 py-3">
+    <i data-lucide="map" class="w-5 h-5 flex-shrink-0"></i>
+    <span>Day Tours</span>
+</a>
+
+<a href="roundtour.html" class="flex items-center gap-4 py-3">
+    <i data-lucide="route" class="w-5 h-5 flex-shrink-0"></i>
+    <span>Round Tours</span>
+</a>
+
+<a href="pickupdrop.html" class="flex items-center gap-4 py-3">
+    <i data-lucide="plane" class="w-5 h-5 flex-shrink-0"></i>
+    <span>Pickup & Drop</span>
+</a>
+
+<a href="tailormade.html" class="flex items-center gap-4 py-3">
+    <i data-lucide="sparkles" class="w-5 h-5 flex-shrink-0"></i>
+    <span>Design Journey</span>
+</a>
+
+<a href="accommodation.html" class="flex items-center gap-4 py-3">
+    <i data-lucide="hotel" class="w-5 h-5 flex-shrink-0"></i>
+    <span>Accommodation</span>
+</a>
+
+<a href="vehicles.html" class="flex items-center gap-4 py-3">
+    <i data-lucide="car-front" class="w-5 h-5 flex-shrink-0"></i>
+    <span>Vehicles</span>
+</a>
+
+<a href="gallery.html" class="flex items-center gap-4 py-3">
+    <i data-lucide="image" class="w-5 h-5 flex-shrink-0"></i>
+    <span>Gallery</span>
+</a>
+
+<a href="contact.html" class="flex items-center gap-4 py-3">
+    <i data-lucide="mail" class="w-5 h-5 flex-shrink-0"></i>
+    <span>Contact</span>
+</a>
+
+</nav>
+
+<div class="absolute bottom-0 left-0 w-full p-6 border-t bg-white">
+
+<a href="contact.html"
+class="block bg-black text-white text-center rounded-full py-3 font-semibold">
+Book Now
+</a>
+
+<a href="https://wa.me/94770787881"
+target="_blank"
+class="block mt-3 border rounded-full text-center py-3 font-semibold hover:bg-gray-100 transition">
+WhatsApp
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- HERO IMAGE ONLY (no text as requested) -->
+<!-- PREMIUM HERO -->
+
+<section class="hero mb-24">
+
+<div class="absolute top-0 left-0 w-full h-full z-0"></div>
+
+<div class="relative z-20 text-center text-white px-6 fadeup">
+
+
+
+</div>
+
+</div>
+
+<div class="scroll">
+
+<div class="mouse"></div>
+
+<p class="mt-3 text-sm tracking-[4px]">
+
+SCROLL
+
+</p>
+
+</div>
+
+</section>
+
+<!-- FEATURE BLOCK 1 -->
+<section class="max-w-6xl mx-auto px-6 pb-16 grid md:grid-cols-2 gap-10 items-center">
+
+  <div>
+    <h3 class="text-2xl font-bold mb-4">Coastal Life</h3>
+    <p class="text-gray-600 leading-7 mb-4">
+      The coastline stretches with fishing villages, calm beaches and open ocean views.
+      Life here moves slowly with the waves and wind.
+    </p>
+
+    <div class="space-y-2 text-sm text-gray-700">
+      <p>• Fishing culture along the coast</p>
+      <p>• Long sandy beaches with open views</p>
+      <p>• Sunset and ocean lifestyle</p>
+      <p>• Small towns near the sea</p>
+    </div>
+  </div>
+
+  <img src="/assets/hugh-whyte-O54bbbMtZ_c-unsplash.jpg"
+       class="rounded-2xl shadow h-80 w-full object-cover">
+
+</section>
+
+<!-- FEATURE BLOCK 2 -->
+<section class="max-w-6xl mx-auto px-6 pb-16 grid md:grid-cols-2 gap-10 items-center">
+
+  <img src="/assets/jerry-kavan-i9eaAR4dWi8-unsplash.jpg"
+       class="rounded-2xl shadow h-80 w-full object-cover">
+
+  <div>
+    <h3 class="text-2xl font-bold mb-4">Hill Country</h3>
+    <p class="text-gray-600 leading-7 mb-4">
+      Cool air, endless tea plantations and winding train routes define the central hills.
+    </p>
+
+    <div class="space-y-2 text-sm text-gray-700">
+      <p>• Tea estates across mountains</p>
+      <p>• Waterfalls and cool climate</p>
+      <p>• Scenic railway journeys</p>
+      <p>• Mist-covered landscapes</p>
+    </div>
+  </div>
+
+</section>
+
+<!-- FEATURE BLOCK 3 -->
+<section class="max-w-6xl mx-auto px-6 pb-16 grid md:grid-cols-2 gap-10 items-center">
+
+  <div>
+    <h3 class="text-2xl font-bold mb-4">Wild Nature</h3>
+    <p class="text-gray-600 leading-7 mb-4">
+      Forests, national parks and wildlife zones bring raw nature close to travellers.
+    </p>
+
+    <div class="space-y-2 text-sm text-gray-700">
+      <p>• Elephant and leopard habitats</p>
+      <p>• National parks and safaris</p>
+      <p>• Dense forests and rivers</p>
+      <p>• Natural ecosystems everywhere</p>
+    </div>
+  </div>
+
+  <img src="/assets/anupa-uthsara-5Np6ZsLDVIM-unsplash.jpg"
+       class="rounded-2xl shadow h-80 w-full object-cover">
+
+</section>
+
+<!-- EXPERIENCE STRIP -->
+<section class="max-w-6xl mx-auto px-6 pb-16">
+
+  <div class="glass rounded-3xl p-10 shadow">
+
+    <h2 class="text-2xl font-bold mb-6">What You Experience Here</h2>
+
+    <div class="grid md:grid-cols-2 gap-4 text-gray-700">
+      <p>• Sunrise over the Indian Ocean</p>
+      <p>• Train rides through mountain valleys</p>
+      <p>• Ancient temples and cultural rituals</p>
+      <p>• Wildlife in natural habitats</p>
+      <p>• Village life and rural roads</p>
+      <p>• Fast-changing landscapes in short travel</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- DESTINATION GUIDE STYLE SECTION -->
+<!-- DESTINATION GUIDE STYLE SECTION (EXPANDED) -->
+<section class="max-w-6xl mx-auto px-6 pb-16">
+
+  <h2 class="text-2xl font-bold mb-8">Popular Travel Regions</h2>
+
+  <div class="grid md:grid-cols-3 gap-6">
+
+    <div class="card bg-white rounded-2xl shadow overflow-hidden">
+      <img src="/assets/more place/sigirya.jpg" class="h-48 w-full object-cover">
+      <div class="p-5">
+        <h3 class="font-bold">Sigiriya</h3>
+        <p class="text-sm text-gray-600 mt-2">
+          Ancient rock fortress, frescoes, and UNESCO world heritage site views.
+        </p>
+      </div>
+    </div>
+
+    <div class="card bg-white rounded-2xl shadow overflow-hidden">
+      <img src="/assets/more place/Kandy.jpg" class="h-48 w-full object-cover">
+      <div class="p-5">
+        <h3 class="font-bold">Kandy</h3>
+        <p class="text-sm text-gray-600 mt-2">
+          Sacred Temple of the Tooth, cultural shows, and lake city views.
+        </p>
+      </div>
+    </div>
+
+    <div class="card bg-white rounded-2xl shadow overflow-hidden">
+      <img src="/assets/more place/ella.jpg" class="h-48 w-full object-cover">
+      <div class="p-5">
+        <h3 class="font-bold">Ella</h3>
+        <p class="text-sm text-gray-600 mt-2">
+          Mountain hikes, Nine Arches Bridge, waterfalls and scenic train rides.
+        </p>
+      </div>
+    </div>
+
+    <div class="card bg-white rounded-2xl shadow overflow-hidden">
+      <img src="/assets/more place/Eliya.jpg"h-48 w-full object-cover">
+      <div class="p-5">
+        <h3 class="font-bold">Nuwara Eliya</h3>
+        <p class="text-sm text-gray-600 mt-2">
+          Cool climate, tea estates, Gregory Lake and colonial charm.
+        </p>
+      </div>
+    </div>
+
+    <div class="card bg-white rounded-2xl shadow overflow-hidden">
+      <img src="/assets/more place/polonaruwa.jpg" class="h-48 w-full object-cover">
+      <div class="p-5">
+        <h3 class="font-bold">Polonnaruwa</h3>
+        <p class="text-sm text-gray-600 mt-2">
+          Ancient ruins, stone temples and historic kingdom architecture.
+        </p>
+      </div>
+    </div>
+
+    <div class="card bg-white rounded-2xl shadow overflow-hidden">
+      <img src="/assets/more place/anurdhpura.jpg" class="h-48 w-full object-cover">
+      <div class="p-5">
+        <h3 class="font-bold">Anuradhapura</h3>
+        <p class="text-sm text-gray-600 mt-2">
+          Sacred ancient city, stupas and the Jaya Sri Maha Bodhi tree.
+        </p>
+      </div>
+    </div>
+
+    <div class="card bg-white rounded-2xl shadow overflow-hidden">
+      <img src="/assets/more place/Dambulla.jpg" class="h-48 w-full object-cover">
+      <div class="p-5">
+        <h3 class="font-bold">Dambulla</h3>
+        <p class="text-sm text-gray-600 mt-2">
+          Cave temple complex with Buddha statues and ancient murals.
+        </p>
+      </div>
+    </div>
+
+    <div class="card bg-white rounded-2xl shadow overflow-hidden">
+      <img src="/assets/more place/Hortan PLains.jpg" class="h-48 w-full object-cover">
+      <div class="p-5">
+        <h3 class="font-bold">Horton Plains</h3>
+        <p class="text-sm text-gray-600 mt-2">
+          World’s End cliff views, misty grasslands and rare wildlife.
+        </p>
+      </div>
+    </div>
+
+    <div class="card bg-white rounded-2xl shadow overflow-hidden">
+      <img src="/assets/more place/Minariya.jpg" class="h-48 w-full object-cover">
+      <div class="p-5">
+        <h3 class="font-bold">Minneriya</h3>
+        <p class="text-sm text-gray-600 mt-2">
+          Elephant gatherings, safari experiences and reservoir landscapes.
+        </p>
+      </div>
+    </div>
+
+    <div class="card bg-white rounded-2xl shadow overflow-hidden">
+      <img src="/assets/more place/wilpatu.jpg" class="h-48 w-full object-cover">
+      <div class="p-5">
+        <h3 class="font-bold">Wilpattu</h3>
+        <p class="text-sm text-gray-600 mt-2">
+          Leopard safaris, villu lakes and quiet forest wilderness.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CTA -->
+
+<section class="text-center py-24 px-6 bg-white text-black border-t border-gray-200">
+
+  <div class="max-w-3xl mx-auto flex flex-col items-center">
+
+    <h2 class="text-4xl md:text-5xl font-bold leading-tight">
+      Start Your Sri Lanka Journey
+    </h2>
+
+    <p class="text-gray-600 mt-4 text-lg max-w-xl">
+      Handcrafted travel experiences across beaches, hills, and wild nature — built just for you.
+    </p>
+
+    <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+
+      <button class="px-8 py-3 bg-black text-white font-semibold rounded-full hover:opacity-90 transition">
+      <a href="contact.html">Plan My Trip</a>  
+      </button>
+
+      <button class="px-8 py-3 border border-black text-black rounded-full hover:bg-black hover:text-white transition">
+       <a href="daytour.html">View Tours</a> 
+      </button>
+
+    </div>
+
+    <p class="text-xs text-gray-500 mt-6 tracking-wide">
+      Fast replies • Custom routes • Local experts
+    </p>
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+ <footer class="bg-white border-t mt-10">
+  <div class="max-w-6xl mx-auto px-6 py-10 grid md:grid-cols-3 gap-6 text-sm text-gray-600">
+
+    <div>
+      <h2 class="font-bold text-black mb-2">Travel Brand</h2>
+      <p>Explore Sri Lanka with safe, curated and unforgettable tours.</p>
+    </div>
+
+    <div>
+      <h2 class="font-bold text-black mb-2">Quick Links</h2>
+      <div class="flex flex-col gap-1">
+        <a href="daytour.html">Day Tours</a>
+        <a href="roundtour.html">Round Tours</a>
+        <a href="tailormade.html">Tailor Made</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+
+    <div>
+  <h2 class="font-bold text-black mb-2">Contact</h2>
+
+  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=voyolankataxiandtours@gmail.com"
+   target="_blank" class="block hover:text-black transition">
+    Email: voyolankataxiandtours@gmail.com
+  </a>
+
+  <a href="tel:+94770787881" class="block hover:text-black transition">
+    Phone: +94 770 787 881
+  </a>
+
+  <a href="https://wa.me/94770787881" target="_blank" class="block hover:text-black transition">
+    WhatsApp: +94 770 787 881
+  </a>
+</div>
+  </div>
+
+  <div class="text-center text-xs text-gray-400 py-4 border-t">
+    © 2026 Voyo Lanka Tours. All rights reserved.
+  </div>
+</footer>
+<script>
+
+const scrollHint =
+document.querySelector(".scroll");
+
+window.addEventListener("scroll",()=>{
+
+if(window.scrollY>80){
+
+scrollHint.classList.add("hide");
+
+}else{
+
+scrollHint.classList.remove("hide");
+
+}
+
+});
+
+const hero = document.querySelector(".hero");
+const nextSection = hero.nextElementSibling;
+
+let lastScrollTime = 0;
+
+window.addEventListener("wheel", (e) => {
+  const now = Date.now();
+
+  const timeDiff = now - lastScrollTime;
+  lastScrollTime = now;
+
+  const speed = Math.abs(e.deltaY) / (timeDiff || 1);
+
+  const heroBottom = hero.getBoundingClientRect().bottom;
+
+  const inHero =
+    heroBottom > 0 && heroBottom < window.innerHeight + 200;
+
+  const isFastScroll = speed > 1.2 && e.deltaY > 0;
+
+  if (inHero && isFastScroll) {
+    e.preventDefault();
+
+    window.scrollTo({
+      top: nextSection.offsetTop - 80,
+      behavior: "smooth"
+    });
+  }
+});
+const cards = document.querySelectorAll(".card");
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      } else {
+        entry.target.classList.remove("show");
+      }
+    });
+  },
+  {
+    threshold: 0.15,
+  }
+);
+
+cards.forEach((card) => {
+  card.classList.add("reveal");
+  observer.observe(card);
+});
+
+</script>
+
+<script>
+lucide.createIcons();
+
+const menuBtn = document.getElementById("menuBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+const menuPanel = document.getElementById("menuPanel");
+const closeMenu = document.getElementById("closeMenu");
+
+function openMenu() {
+    mobileMenu.classList.remove("opacity-0", "invisible");
+    menuPanel.classList.remove("translate-x-full");
+    document.body.style.overflow = "hidden";
+}
+
+function hideMenu() {
+    menuPanel.classList.add("translate-x-full");
+    mobileMenu.classList.add("opacity-0");
+
+    setTimeout(() => {
+        mobileMenu.classList.add("invisible");
+    }, 300);
+
+    document.body.style.overflow = "";
+}
+
+menuBtn?.addEventListener("click", openMenu);
+closeMenu?.addEventListener("click", hideMenu);
+
+mobileMenu?.addEventListener("click", (e) => {
+    if (e.target === mobileMenu) hideMenu();
+});
+
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") hideMenu();
+});
+</script>
+</body>
+</html>

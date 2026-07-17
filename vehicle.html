@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Vehicle Details</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+
+<body class="bg-gray-100 text-gray-800">
+
+
+<!-- NAVBAR -->
+
+<header class="fixed top-0 left-0 w-full z-50 bg-white/70 backdrop-blur-md shadow-sm">
+
+<div class="flex justify-between items-center px-6 py-4 max-w-6xl mx-auto">
+
+
+<h1 class="font-bold text-lg">
+LOGO
+</h1>
+
+
+
+<nav class="hidden md:flex gap-6 text-sm text-gray-600">
+
+<a href="index.html" class="hover:text-black">
+Home
+</a>
+
+<a href="vehicles.html" class="hover:text-black">
+Vehicles
+</a>
+
+</nav>
+
+
+
+<a 
+href="vehicles.html"
+class="inline-flex items-center gap-2 bg-black text-white px-5 py-2.5 rounded-lg hover:bg-gray-800 transition shadow-md"
+>
+
+← Go Back
+
+</a>
+
+
+</div>
+
+<!-- Mobile -->
+
+<button id="menuBtn" class="md:hidden">
+
+<i data-lucide="menu" class="w-8 h-8"></i>
+
+</button>
+
+</div>
+
+</header>
+
+<!-- MOBILE MENU -->
+
+<div id="mobileMenu"
+class="fixed inset-0 bg-black/40 backdrop-blur-md z-[999] opacity-0 invisible transition-all duration-300">
+
+<div id="menuPanel"
+class="absolute right-0 top-0 h-full w-[320px] bg-white shadow-2xl translate-x-full transition-transform duration-300">
+
+<div class="flex items-center justify-between p-6 border-b">
+
+<h2 class="font-bold text-xl">
+
+VOYO LANKA
+
+</h2>
+
+<button id="closeMenu">
+
+<i data-lucide="x" class="w-7 h-7"></i>
+
+</button>
+
+</div>
+
+<nav class="flex flex-col p-6 text-lg">
+
+
+
+<a href="index.html" class="flex items-center gap-4 py-3">
+
+    <i data-lucide="house" class="w-5 h-5 flex-shrink-0"></i>
+
+    <span>Home</span>
+
+</a>
+
+<a href="pickupdrop.html" class="flex items-center gap-4 py-3">
+
+    <i data-lucide="plane" class="w-5 h-5 flex-shrink-0"></i>
+
+    <span>Pickup & Drop</span>
+
+
+<a href="vehicles.html" class="flex items-center gap-4 py-3">
+
+    <i data-lucide="car-front" class="w-5 h-5 flex-shrink-0"></i>
+
+    <span>Vehicles</span>
+
+</a>
+
+</nav>
+<div class="absolute bottom-0 left-0 w-full p-6 border-t bg-white"> 
+
+
+    <a href="vehicles.html"
+
+class="block bg-black text-white text-center rounded-full py-3 font-semibold">
+
+Back
+</a>
+
+<a href="contact.html"
+
+class="block bg-black text-white text-center rounded-full py-3 font-semibold">
+
+Book Now
+
+</a>
+
+
+
+<a href="https://wa.me/94770787881"
+
+target="_blank"
+
+class="block mt-3 border rounded-full text-center py-3 font-semibold hover:bg-gray-100 transition">
+
+WhatsApp
+
+</a>
+
+
+
+</div>
+
+</div>
+
+</div>
+
+
+
+
+<!-- HERO -->
+
+<section class="relative min-h-[55vh] flex items-end">
+
+
+<img 
+src="/assets/Vehical/jamesdemers-automobile-176989.jpg"
+class="absolute inset-0 w-full h-full object-cover"
+/>
+
+<div class="absolute inset-0 bg-black/50"></div>
+
+
+
+<div class="relative max-w-6xl mx-auto px-6 py-12 text-white">
+
+
+<h1 
+id="name"
+class="text-5xl font-bold mb-3">
+</h1>
+
+
+
+<p 
+id="shortTag"
+class="text-gray-200 max-w-2xl">
+</p>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<!-- CONTENT -->
+
+<section class="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-10">
+
+
+
+
+
+<!-- LEFT SIDE -->
+
+<div>
+
+
+<h2 class="text-3xl font-bold mb-4">
+Overview
+</h2>
+
+
+
+<p 
+id="desc"
+class="text-gray-600 leading-7 mb-6">
+</p>
+
+
+
+
+
+<!-- HIGHLIGHTS -->
+
+<div class="bg-white p-6 rounded-2xl shadow mb-6">
+
+
+<h3 class="font-bold text-lg mb-3">
+Key Highlights
+</h3>
+
+
+
+<ul class="text-gray-600 space-y-2 text-sm">
+
+
+<li>
+✔ Comfortable seating for every journey
+</li>
+
+
+<li>
+✔ Air conditioned travel experience
+</li>
+
+
+<li>
+✔ Well maintained and reliable vehicles
+</li>
+
+
+<li>
+✔ Suitable for tours and airport transfers
+</li>
+
+
+</ul>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- BEST USE -->
+
+<div class="bg-white p-6 rounded-2xl shadow mb-6">
+
+
+<h3 class="font-bold text-lg mb-3">
+Best Suitable For
+</h3>
+
+
+<p class="text-gray-600 text-sm leading-6">
+
+Perfect for sightseeing tours, airport pickups,
+family holidays, business travel, and private
+journeys across Sri Lanka. Selected based on
+comfort, passenger capacity, and travel needs.
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+
+<!-- INFO BOX -->
+
+<div class="grid grid-cols-3 gap-4">
+
+
+<div class="bg-white p-4 rounded-xl shadow">
+
+<p class="text-sm text-gray-500">
+Type
+</p>
+
+<p id="type" class="font-bold">
+</p>
+
+</div>
+
+
+
+
+
+<div class="bg-white p-4 rounded-xl shadow">
+
+<p class="text-sm text-gray-500">
+Seats
+</p>
+
+<p id="seats" class="font-bold">
+</p>
+
+</div>
+
+
+
+
+
+<div class="bg-white p-4 rounded-xl shadow">
+
+<p class="text-sm text-gray-500">
+Luggage
+</p>
+
+<p id="bags" class="font-bold">
+</p>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<!-- RIGHT SIDE PREMIUM -->
+
+<div>
+
+
+<h2 class="text-3xl font-bold mb-6">
+Travel Experience
+</h2>
+
+
+
+
+<div class="bg-white rounded-3xl shadow-xl p-8 space-y-7">
+
+
+
+
+
+<div class="flex gap-5">
+
+
+<div class="w-12 h-12 rounded-2xl bg-black text-white flex items-center justify-center text-xl">
+
+🚐
+
+</div>
+
+
+
+<div>
+
+<h3 class="font-bold text-lg">
+Comfortable Journey
+</h3>
+
+
+<p class="text-gray-600 text-sm leading-6 mt-1">
+
+Enjoy a smooth and relaxing journey with
+comfortable seating, air conditioning,
+and a pleasant travel environment.
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="flex gap-5">
+
+
+<div class="w-12 h-12 rounded-2xl bg-black text-white flex items-center justify-center text-xl">
+
+🌴
+
+</div>
+
+
+
+<div>
+
+<h3 class="font-bold text-lg">
+Perfect For Sri Lanka Tours
+</h3>
+
+
+<p class="text-gray-600 text-sm leading-6 mt-1">
+
+Ideal for beaches, cultural sites,
+hill country routes, wildlife trips,
+and island-wide adventures.
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="flex gap-5">
+
+
+<div class="w-12 h-12 rounded-2xl bg-black text-white flex items-center justify-center text-xl">
+
+⭐
+
+</div>
+
+
+
+<div>
+
+<h3 class="font-bold text-lg">
+Reliable Service
+</h3>
+
+
+<p class="text-gray-600 text-sm leading-6 mt-1">
+
+Travel with confidence through
+professional service and dependable
+transport solutions.
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="rounded-2xl bg-gray-900 text-white p-6">
+
+
+<h3 class="text-xl font-bold mb-2">
+Ready To Travel?
+</h3>
+
+
+<p class="text-gray-300 text-sm mb-5">
+
+Book this vehicle for your private
+Sri Lanka tour, airport transfer,
+or customized journey.
+
+</p>
+
+
+
+<a 
+href="contact.html"
+class="inline-block bg-white text-black px-6 py-3 rounded-full font-semibold hover:bg-gray-200 transition"
+>
+
+Book This Vehicle
+
+</a>
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+</section>
+<!-- EXPLORE MORE VEHICLES -->
+
+<section class="max-w-7xl mx-auto px-6 pb-24">
+
+
+<h2 class="text-3xl font-bold mb-3">
+Explore More Vehicles
+</h2>
+
+
+
+<p class="text-gray-600 mb-10 max-w-3xl">
+
+Tap a vehicle to view full details including seating capacity,
+luggage space, comfort level, and travel suitability.
+
+</p>
+
+
+
+
+
+<div class="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
+
+
+
+
+
+<!-- KDH -->
+
+<a 
+href="vehicle.html?name=KDH%20High%20Roof"
+class="group bg-white rounded-3xl overflow-hidden shadow hover:shadow-xl transition"
+>
+
+
+<img 
+src="/assets/Vehical/highroofkdh.png"
+class="h-44 w-full object-cover group-hover:scale-105 transition duration-300"
+>
+
+
+<div class="p-4">
+
+<h3 class="font-bold">
+KDH High Roof
+</h3>
+
+<p class="text-sm text-gray-600">
+Large group travel van
+</p>
+
+
+</div>
+
+
+</a>
+
+
+
+
+
+
+
+<!-- AXIO -->
+
+
+<a 
+href="vehicle.html?name=Toyota%20Axio"
+class="group bg-white rounded-3xl overflow-hidden shadow hover:shadow-xl transition"
+>
+
+
+<img 
+src="/assets/Vehical/axio (2).png"
+class="h-44 w-full object-cover group-hover:scale-105 transition duration-300"
+>
+
+
+<div class="p-4">
+
+
+<h3 class="font-bold">
+Toyota Axio
+</h3>
+
+
+<p class="text-sm text-gray-600">
+Comfort private ride
+</p>
+
+
+</div>
+
+
+</a>
+
+
+
+
+
+
+
+
+<!-- PRIUS -->
+
+
+<a 
+href="vehicle.html?name=Corolla%20Prius"
+class="group bg-white rounded-3xl overflow-hidden shadow hover:shadow-xl transition"
+>
+
+
+<img 
+src="/assets/Vehical/prius.png"
+class="h-44 w-full object-cover group-hover:scale-105 transition duration-300"
+>
+
+
+<div class="p-4">
+
+
+<h3 class="font-bold">
+Corolla / Prius
+</h3>
+
+
+<p class="text-sm text-gray-600">
+Hybrid comfort ride
+</p>
+
+
+</div>
+
+
+</a>
+
+
+
+
+
+
+
+
+
+<!-- WAGON R -->
+
+
+<a 
+href="vehicle.html?name=Wagon%20R"
+class="group bg-white rounded-3xl overflow-hidden shadow hover:shadow-xl transition"
+>
+
+
+<img 
+src="/assets/Vehical/wagon r.png"
+class="h-44 w-full object-cover group-hover:scale-105 transition duration-300"
+>
+
+
+<div class="p-4">
+
+
+<h3 class="font-bold">
+Wagon R
+</h3>
+
+
+<p class="text-sm text-gray-600">
+Small family car
+</p>
+
+
+</div>
+
+
+</a>
+
+
+
+
+
+
+
+<!-- SUZUKI EVERY -->
+
+
+<a 
+href="vehicle.html?name=Suzuki%20Every"
+class="group bg-white rounded-3xl overflow-hidden shadow hover:shadow-xl transition"
+>
+
+
+<img 
+src="/assets/Vehical/every.png"
+class="h-44 w-full object-cover group-hover:scale-105 transition duration-300"
+>
+
+
+<div class="p-4">
+
+
+<h3 class="font-bold">
+Suzuki Every
+</h3>
+
+
+<p class="text-sm text-gray-600">
+Small group van
+</p>
+
+
+</div>
+
+
+</a>
+
+
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- FOOTER -->
+
+
+<footer class="bg-white border-t">
+
+
+<div class="max-w-6xl mx-auto px-6 py-10 grid md:grid-cols-3 gap-6 text-sm text-gray-600">
+
+
+
+
+
+<div>
+
+<h2 class="font-bold text-black mb-2">
+Travel Brand
+</h2>
+
+
+<p>
+Explore Sri Lanka with safe, curated and unforgettable tours.
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+<div>
+
+
+<h2 class="font-bold text-black mb-2">
+Quick Links
+</h2>
+
+
+
+<div class="flex flex-col gap-1">
+
+
+<a href="daytour.html">
+Day Tours
+</a>
+
+
+<a href="roundtour.html">
+Round Tours
+</a>
+
+
+<a href="tailormade.html">
+Tailor Made
+</a>
+
+
+<a href="contact.html">
+Contact
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div>
+
+
+<h2 class="font-bold text-black mb-2">
+Contact
+</h2>
+
+
+
+
+<a 
+href="https://mail.google.com/mail/?view=cm&fs=1&to=voyolankataxiandtours@gmail.com"
+target="_blank"
+class="block hover:text-black transition"
+>
+
+Email: info@travel.com
+
+</a>
+
+
+
+
+<a 
+href="tel:+94770787881"
+class="block hover:text-black transition"
+>
+
+Phone: +94 770 787 881
+
+</a>
+
+
+
+
+
+<a 
+href="https://wa.me/94770787881"
+target="_blank"
+class="block hover:text-black transition"
+>
+
+WhatsApp: +94 770 787 881
+
+</a>
+
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+<div class="text-center text-xs text-gray-400 py-4 border-t">
+
+© 2026 Voyo Lanka Tours. All rights reserved.
+
+</div>
+
+
+
+</footer>
+
+<script>
+
+const params = new URLSearchParams(window.location.search);
+
+const name = params.get("name");
+
+
+
+const data = {
+
+
+"KDH High Roof": {
+
+img:"/assets/Vehical/highroofkdh.png",
+
+short:"Spacious group travel van designed for tours, airport transfers, and family journeys.",
+
+desc:
+"A comfortable high roof van designed for group travel across Sri Lanka. It provides spacious seating, strong air conditioning, and enough luggage capacity for long-distance journeys. Perfect for families, friends, and private tour groups.",
+
+type:"Van",
+
+seats:"10 - 14",
+
+bags:"Large"
+
+},
+
+
+
+
+"Toyota Axio": {
+
+
+img:"/assets/Vehical/axio (2).png",
+
+short:"A comfortable premium sedan for private tours and business travel.",
+
+
+desc:
+"Toyota Axio offers a smooth and comfortable driving experience with excellent fuel efficiency. Suitable for couples, small families, airport transfers, and private sightseeing tours.",
+
+
+type:"Car",
+
+seats:"4",
+
+bags:"2"
+
+},
+
+
+
+
+
+
+"Corolla Prius": {
+
+
+img:"/assets/Vehical/prius.png",
+
+short:"Hybrid comfort vehicle ideal for scenic Sri Lanka journeys.",
+
+
+desc:
+"A fuel efficient hybrid vehicle offering a quiet and comfortable ride. Perfect for exploring beaches, cultural locations, hill country destinations, and long-distance routes.",
+
+
+type:"Hybrid Car",
+
+seats:"4",
+
+bags:"3"
+
+},
+
+
+
+
+
+
+"Corolla / Prius": {
+
+
+img:"/assets/Vehical/prius.png",
+
+short:"Hybrid comfort vehicle ideal for scenic Sri Lanka journeys.",
+
+
+desc:
+"A fuel efficient hybrid vehicle offering a quiet and comfortable ride. Perfect for exploring beaches, cultural locations, hill country destinations, and long-distance routes.",
+
+
+type:"Hybrid Car",
+
+seats:"4",
+
+bags:"3"
+
+},
+
+
+
+
+
+
+
+"Wagon R": {
+
+
+img:"/assets/Vehical/wagon r.png",
+
+
+short:"Compact family vehicle for comfortable everyday travel.",
+
+
+desc:
+"A practical and economical vehicle suitable for city travel, airport transfers, and short tours. Provides good comfort with excellent fuel efficiency.",
+
+
+type:"Car",
+
+seats:"4",
+
+bags:"2"
+
+},
+
+
+
+
+
+
+
+"Suzuki Every": {
+
+
+img:"/assets/Vehical/every.png",
+
+
+short:"Small group van for flexible travel experiences.",
+
+
+desc:
+"A compact van suitable for small groups and family trips. Ideal for short tours, transfers, and exploring destinations around Sri Lanka.",
+
+
+type:"Van",
+
+seats:"5 - 7",
+
+bags:"Medium"
+
+},
+
+
+
+
+
+"Suzuki Alto": {
+
+
+img:"/assets/Vehical/alto.png",
+
+
+short:"Budget friendly compact car for city travel.",
+
+
+desc:
+"A small economical vehicle perfect for quick trips, city transport, and budget friendly travel solutions.",
+
+
+type:"Budget Car",
+
+seats:"4",
+
+bags:"Small"
+
+}
+
+
+
+};
+
+
+
+
+
+
+const vehicle = data[name] || data["KDH High Roof"];
+
+
+
+
+
+
+
+document.getElementById("name").textContent =
+name || "Vehicle";
+
+
+
+document.getElementById("mainImg").src =
+vehicle.img;
+
+
+
+document.getElementById("shortTag").textContent =
+vehicle.short;
+
+
+
+document.getElementById("desc").textContent =
+vehicle.desc;
+
+
+
+document.getElementById("type").textContent =
+vehicle.type;
+
+
+
+document.getElementById("seats").textContent =
+vehicle.seats;
+
+
+
+document.getElementById("bags").textContent =
+vehicle.bags;
+
+
+
+</script>
+</body>
+</html>

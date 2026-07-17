@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Design Your Journey | Voyo Lanka</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<style>
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:system-ui;
+background:#f9fafb;
+color:#111827;
+padding-top:80px;
+}
+
+.hero{
+background:
+linear-gradient(rgba(0,0,0,.60),rgba(0,0,0,.60)),
+url("https://images.unsplash.com/photo-1527631746610-bca00a040d60?q=80&w=2000");
+background-size:cover;
+background-position:center;
+}
+
+.card{
+transition:.35s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAV -->
+
+<!-- NAV -->
+<header class="fixed top-0 left-0 w-full z-50 bg-white/70 backdrop-blur-md shadow-sm">
+
+<div class="max-w-[1300px] mx-auto flex justify-between items-center px-4 lg:px-6 py-3">
+
+<a href="index.html">
+<h1 class="font-bold text-lg">LOGO</h1>
+</a>
+
+<!-- Desktop -->
+
+<nav class="hidden md:flex gap-6 text-sm text-gray-600">
+
+<a href="index.html" class="hover:text-black">Home</a>
+<a href="aboutlanka.html" class="hover:text-black">About Sri Lanka</a>
+<a href="daytour.html" class="hover:text-black">Day Tours</a>
+<a href="roundtour.html" class="hover:text-black">Round Tours</a>
+<a href="tailormade.html" class="hover:text-black font-semibold">Design Your Journey</a>
+<a href="pickupdrop.html" class="hover:text-black">Pickup & Drop</a>
+<a href="accommodation.html" class="hover:text-black">Accommodation</a>
+<a href="vehicles.html" class="hover:text-black">Vehicles</a>
+<a href="gallery.html" class="hover:text-black">Gallery</a>
+<a href="contact.html" class="hover:text-black">Contact</a>
+
+</nav>
+
+<a href="contact.html"
+class="hidden md:block bg-black text-white px-4 py-2 rounded">
+Book Now
+</a>
+
+<button id="menuBtn" class="md:hidden">
+
+<i data-lucide="menu" class="w-8 h-8"></i>
+
+</button>
+
+</div>
+
+</header>
+
+<!-- MOBILE MENU -->
+
+<div id="mobileMenu"
+class="fixed inset-0 bg-black/40 backdrop-blur-md z-[999] opacity-0 invisible transition-all duration-300">
+
+<div id="menuPanel"
+class="absolute right-0 top-0 h-full w-[320px] bg-white shadow-2xl translate-x-full transition-transform duration-300">
+
+<div class="flex items-center justify-between p-6 border-b">
+
+<h2 class="font-bold text-xl">
+
+VOYO LANKA
+
+</h2>
+
+<button id="closeMenu">
+
+<i data-lucide="x" class="w-7 h-7"></i>
+
+</button>
+
+</div>
+
+<nav class="flex flex-col p-6 text-lg">
+
+<a href="index.html" class="flex items-center gap-4 py-3">
+    <i data-lucide="house" class="w-5 h-5 flex-shrink-0"></i>
+    <span>Home</span>
+</a>
+
+<a href="aboutlanka.html" class="flex items-center gap-4 py-3 font-semibold">
+    <i data-lucide="palmtree" class="w-5 h-5 flex-shrink-0"></i>
+    <span>About Sri Lanka</span>
+</a>
+
+<a href="daytour.html" class="flex items-center gap-4 py-3">
+    <i data-lucide="map" class="w-5 h-5 flex-shrink-0"></i>
+    <span>Day Tours</span>
+</a>
+
+<a href="roundtour.html" class="flex items-center gap-4 py-3">
+    <i data-lucide="route" class="w-5 h-5 flex-shrink-0"></i>
+    <span>Round Tours</span>
+</a>
+
+<a href="pickupdrop.html" class="flex items-center gap-4 py-3">
+    <i data-lucide="plane" class="w-5 h-5 flex-shrink-0"></i>
+    <span>Pickup & Drop</span>
+</a>
+
+<a href="tailormade.html" class="flex items-center gap-4 py-3">
+    <i data-lucide="sparkles" class="w-5 h-5 flex-shrink-0"></i>
+    <span>Design Journey</span>
+</a>
+
+<a href="accommodation.html" class="flex items-center gap-4 py-3">
+    <i data-lucide="hotel" class="w-5 h-5 flex-shrink-0"></i>
+    <span>Accommodation</span>
+</a>
+
+<a href="vehicles.html" class="flex items-center gap-4 py-3">
+    <i data-lucide="car-front" class="w-5 h-5 flex-shrink-0"></i>
+    <span>Vehicles</span>
+</a>
+
+<a href="gallery.html" class="flex items-center gap-4 py-3">
+    <i data-lucide="image" class="w-5 h-5 flex-shrink-0"></i>
+    <span>Gallery</span>
+</a>
+
+<a href="contact.html" class="flex items-center gap-4 py-3">
+    <i data-lucide="mail" class="w-5 h-5 flex-shrink-0"></i>
+    <span>Contact</span>
+</a>
+
+</nav>
+
+<div class="absolute bottom-0 left-0 w-full p-6 border-t bg-white">
+
+<a href="contact.html"
+class="block bg-black text-white text-center rounded-full py-3 font-semibold">
+Book Now
+</a>
+
+<a href="https://wa.me/94770787881"
+target="_blank"
+class="block mt-3 border rounded-full text-center py-3 font-semibold hover:bg-gray-100 transition">
+WhatsApp
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- HERO -->
+
+<section class="hero min-h-screen flex items-center">
+
+<div class="max-w-6xl mx-auto px-6 text-white">
+
+<div class="max-w-3xl">
+
+<span class="inline-block bg-white/10 backdrop-blur-md px-5 py-2 rounded-full text-sm tracking-widest uppercase">
+
+100% Tailor Made Tours
+
+</span>
+
+<h1 class="text-5xl md:text-7xl font-bold leading-tight mt-8">
+
+Design Your
+
+<br>
+
+Perfect Sri Lanka Journey
+
+</h1>
+
+<p class="mt-8 text-lg md:text-xl text-gray-200 leading-8">
+
+No two travelers are the same.
+
+Whether you're dreaming of golden beaches, misty mountains, wildlife safaris, ancient temples, luxury hotels, or hidden local experiences, we'll create a completely personalized itinerary just for you.
+
+</p>
+
+<p class="mt-6 text-gray-300 leading-8">
+
+Simply tell us your travel dates, the places you'd like to visit, and any special requests. Our team will recommend the perfect route, vehicle, accommodation, and experiences based on your preferences.
+
+</p>
+
+<div class="flex flex-col sm:flex-row gap-5 mt-10">
+
+<a
+href="https://wa.me/94770787881"
+target="_blank"
+class="bg-white text-black px-8 py-4 rounded-full font-semibold hover:bg-gray-200 transition">
+
+Plan My Tour on WhatsApp
+
+</a>
+
+<a
+href="contact.html"
+class="border border-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-black transition">
+
+Contact Us
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- WHY CHOOSE A TAILOR MADE TOUR -->
+
+<section class="py-24 bg-white">
+
+<div class="max-w-6xl mx-auto px-6">
+
+<div class="text-center mb-16">
+
+<span class="text-sm tracking-[6px] text-gray-500 uppercase">
+Why Choose Us
+</span>
+
+<h2 class="text-4xl md:text-5xl font-bold mt-4">
+
+A Holiday Designed Around You
+
+</h2>
+
+<p class="text-gray-600 max-w-3xl mx-auto mt-6 leading-8">
+
+Every traveler has different interests, budgets, and travel styles. Instead of fixed tour packages, we create a completely personalized journey that matches exactly what you're looking for.
+
+</p>
+
+</div>
+
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+<!-- Card -->
+
+<div class="card bg-gray-50 rounded-3xl p-8 shadow-sm">
+
+<div class="w-16 h-16 rounded-2xl bg-black text-white flex items-center justify-center mb-6">
+
+<i data-lucide="map"></i>
+
+</div>
+
+<h3 class="text-2xl font-bold mb-4">
+
+Custom Itinerary
+
+</h3>
+
+<p class="text-gray-600 leading-7">
+
+Choose the destinations, attractions, and experiences you want to enjoy. Every itinerary is created just for you.
+
+</p>
+
+</div>
+
+<!-- Card -->
+
+<div class="card bg-gray-50 rounded-3xl p-8 shadow-sm">
+
+<div class="w-16 h-16 rounded-2xl bg-black text-white flex items-center justify-center mb-6">
+
+<i data-lucide="car-front"></i>
+
+</div>
+
+<h3 class="text-2xl font-bold mb-4">
+
+Private Transportation
+
+</h3>
+
+<p class="text-gray-600 leading-7">
+
+Travel comfortably in one of our well-maintained vehicles with an experienced local driver.
+
+</p>
+
+</div>
+
+<!-- Card -->
+
+<div class="card bg-gray-50 rounded-3xl p-8 shadow-sm">
+
+<div class="w-16 h-16 rounded-2xl bg-black text-white flex items-center justify-center mb-6">
+
+<i data-lucide="hotel"></i>
+
+</div>
+
+<h3 class="text-2xl font-bold mb-4">
+
+Hotel Recommendations
+
+</h3>
+
+<p class="text-gray-600 leading-7">
+
+From luxury resorts to budget-friendly stays, we'll recommend accommodation that suits your travel style.
+
+</p>
+
+</div>
+
+<!-- Card -->
+
+<div class="card bg-gray-50 rounded-3xl p-8 shadow-sm">
+
+<div class="w-16 h-16 rounded-2xl bg-black text-white flex items-center justify-center mb-6">
+
+<i data-lucide="clock-3"></i>
+
+</div>
+
+<h3 class="text-2xl font-bold mb-4">
+
+Travel At Your Pace
+
+</h3>
+
+<p class="text-gray-600 leading-7">
+
+No rushing between attractions. Spend more time at the places you love and enjoy a relaxed holiday.
+
+</p>
+
+</div>
+
+<!-- Card -->
+
+<div class="card bg-gray-50 rounded-3xl p-8 shadow-sm">
+
+<div class="w-16 h-16 rounded-2xl bg-black text-white flex items-center justify-center mb-6">
+
+<i data-lucide="star"></i>
+
+</div>
+
+<h3 class="text-2xl font-bold mb-4">
+
+Local Knowledge
+
+</h3>
+
+<p class="text-gray-600 leading-7">
+
+Discover hidden gems, scenic viewpoints, authentic restaurants, and unique experiences recommended by locals.
+
+</p>
+
+</div>
+
+<!-- Card -->
+
+<div class="card bg-gray-50 rounded-3xl p-8 shadow-sm">
+
+<div class="w-16 h-16 rounded-2xl bg-black text-white flex items-center justify-center mb-6">
+
+<i data-lucide="heart-handshake"></i>
+
+</div>
+
+<h3 class="text-2xl font-bold mb-4">
+
+Personal Service
+
+</h3>
+
+<p class="text-gray-600 leading-7">
+
+From your first message until the end of your trip, we're here to help make your Sri Lanka holiday unforgettable.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PERFECT FOR -->
+
+<section class="py-24 bg-gray-100">
+
+<div class="max-w-6xl mx-auto px-6">
+
+<div class="text-center mb-16">
+
+<span class="text-sm tracking-[6px] text-gray-500 uppercase">
+Perfect For
+</span>
+
+<h2 class="text-4xl md:text-5xl font-bold mt-4">
+
+Whatever Your Travel Style
+
+</h2>
+
+<p class="text-gray-600 max-w-3xl mx-auto mt-6 leading-8">
+
+Whether you're planning a romantic escape, a family adventure, or an unforgettable road trip around Sri Lanka, we'll create an itinerary that's perfect for you.
+
+</p>
+
+</div>
+
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+<!-- Honeymoon -->
+
+<div class="card bg-white rounded-3xl p-8 shadow-sm">
+
+<div class="w-16 h-16 bg-black rounded-2xl flex items-center justify-center text-white mb-6">
+
+<i data-lucide="heart"></i>
+
+</div>
+
+<h3 class="text-2xl font-bold mb-3">
+
+Honeymoon
+
+</h3>
+
+<p class="text-gray-600 leading-7">
+
+Romantic beaches, luxury hotels, scenic train rides and unforgettable moments for your special trip.
+
+</p>
+
+</div>
+
+<!-- Family -->
+
+<div class="card bg-white rounded-3xl p-8 shadow-sm">
+
+<div class="w-16 h-16 bg-black rounded-2xl flex items-center justify-center text-white mb-6">
+
+<i data-lucide="users"></i>
+
+</div>
+
+<h3 class="text-2xl font-bold mb-3">
+
+Family Holidays
+
+</h3>
+
+<p class="text-gray-600 leading-7">
+
+Relaxed itineraries with family-friendly attractions, wildlife parks, beaches and comfortable accommodation.
+
+</p>
+
+</div>
+
+<!-- Adventure -->
+
+<div class="card bg-white rounded-3xl p-8 shadow-sm">
+
+<div class="w-16 h-16 bg-black rounded-2xl flex items-center justify-center text-white mb-6">
+
+<i data-lucide="mountain"></i>
+
+</div>
+
+<h3 class="text-2xl font-bold mb-3">
+
+Adventure Tours
+
+</h3>
+
+<p class="text-gray-600 leading-7">
+
+Hiking, waterfalls, scenic viewpoints, safaris and exciting outdoor experiences across Sri Lanka.
+
+</p>
+
+</div>
+
+<!-- Wildlife -->
+
+<div class="card bg-white rounded-3xl p-8 shadow-sm">
+
+<div class="w-16 h-16 bg-black rounded-2xl flex items-center justify-center text-white mb-6">
+
+<i data-lucide="trees"></i>
+
+</div>
+
+<h3 class="text-2xl font-bold mb-3">
+
+Wildlife & Nature
+
+</h3>
+
+<p class="text-gray-600 leading-7">
+
+Experience elephants, leopards, national parks, bird watching and Sri Lanka's incredible natural beauty.
+
+</p>
+
+</div>
+
+<!-- Culture -->
+
+<div class="card bg-white rounded-3xl p-8 shadow-sm">
+
+<div class="w-16 h-16 bg-black rounded-2xl flex items-center justify-center text-white mb-6">
+
+<i data-lucide="landmark"></i>
+
+</div>
+
+<h3 class="text-2xl font-bold mb-3">
+
+Culture & Heritage
+
+</h3>
+
+<p class="text-gray-600 leading-7">
+
+Visit ancient cities, temples, UNESCO World Heritage Sites and discover Sri Lanka's rich history.
+
+</p>
+
+</div>
+
+<!-- Luxury -->
+
+<div class="card bg-white rounded-3xl p-8 shadow-sm">
+
+<div class="w-16 h-16 bg-black rounded-2xl flex items-center justify-center text-white mb-6">
+
+<i data-lucide="gem"></i>
+
+</div>
+
+<h3 class="text-2xl font-bold mb-3">
+
+Luxury Escapes
+
+</h3>
+
+<p class="text-gray-600 leading-7">
+
+Stay in premium resorts, boutique villas and enjoy a first-class travel experience from start to finish.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FINAL CTA -->
+<section class="py-24 bg-black text-white">
+
+    <div class="max-w-4xl mx-auto px-6 text-center">
+
+        <span class="text-sm uppercase tracking-[4px] text-gray-400">
+            Ready to Plan?
+        </span>
+
+        <h2 class="text-4xl md:text-5xl font-bold mt-4">
+            Let's Create Your Dream Sri Lanka Tour
+        </h2>
+
+        <p class="text-gray-300 mt-6 leading-8 text-lg">
+            Every traveler is different. Tell us your travel dates,
+            destinations, budget, and interests, and we'll create a
+            completely personalized itinerary just for you.
+        </p>
+
+        <div class="mt-10">
+
+            <a href="https://wa.me/94770787881"
+               target="_blank"
+               class="inline-flex items-center gap-3 bg-white text-black px-8 py-4 rounded-full font-semibold hover:scale-105 transition">
+
+                <i data-lucide="message-circle"></i>
+
+                Chat With Us on WhatsApp
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-white border-t">
+
+<div class="max-w-6xl mx-auto px-6 py-10 grid md:grid-cols-3 gap-6 text-sm text-gray-600">
+
+<div>
+
+<h2 class="font-bold text-black mb-2">
+VOYO LANKA
+</h2>
+
+<p>
+Custom private tours across Sri Lanka designed around your travel style.
+</p>
+
+</div>
+
+<div>
+
+<h2 class="font-bold text-black mb-2">
+Quick Links
+</h2>
+
+<div class="flex flex-col gap-2">
+
+<a href="daytour.html">Day Tours</a>
+<a href="roundtour.html">Round Tours</a>
+<a href="pickupdrop.html">Pickup & Drop</a>
+<a href="vehicles.html">Vehicles</a>
+<a href="contact.html">Contact</a>
+
+</div>
+
+</div>
+
+<div>
+
+<h2 class="font-bold text-black mb-2">
+Contact
+</h2>
+
+<a href="tel:+94770787881"
+class="block hover:text-black">
++94 770 787 881
+</a>
+
+<a href="mailto:voyolankataxiandtours@gmail.com"
+class="block hover:text-black">
+voyolankataxiandtours@gmail.com
+</a>
+
+<a href="https://wa.me/94770787881"
+target="_blank"
+class="block hover:text-black">
+
+WhatsApp Us →
+
+</a>
+
+</div>
+
+</div>
+
+<div class="text-center text-xs text-gray-400 py-5 border-t">
+
+© 2026 VOYO LANKA. All rights reserved.
+
+</div>
+
+</footer>
+
+<script>
+
+lucide.createIcons();
+
+const menuBtn=document.getElementById("menuBtn");
+const mobileMenu=document.getElementById("mobileMenu");
+const menuPanel=document.getElementById("menuPanel");
+const closeMenu=document.getElementById("closeMenu");
+
+function openMenu(){
+
+mobileMenu.classList.remove("opacity-0","invisible");
+menuPanel.classList.remove("translate-x-full");
+document.body.style.overflow="hidden";
+
+}
+
+function hideMenu(){
+
+menuPanel.classList.add("translate-x-full");
+mobileMenu.classList.add("opacity-0");
+
+setTimeout(()=>{
+
+mobileMenu.classList.add("invisible");
+
+},300);
+
+document.body.style.overflow="";
+
+}
+
+menuBtn.onclick=openMenu;
+closeMenu.onclick=hideMenu;
+
+mobileMenu.onclick=(e)=>{
+
+if(e.target===mobileMenu) hideMenu();
+
+};
+
+document.addEventListener("keydown",(e)=>{
+
+if(e.key==="Escape") hideMenu();
+
+});
+
+</script>
+
+</body>
+</html>

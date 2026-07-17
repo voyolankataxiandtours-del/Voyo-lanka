@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Tour</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<style>
+
+html{
+scroll-behavior:smooth;
+}
+
+.hero{
+min-height:70vh;
+
+background-size:cover;
+
+background-position:center;
+
+position:relative;
+
+}
+
+.hero::before{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+background:linear-gradient(to top,rgba(0,0,0,.75),rgba(0,0,0,.2));
+
+}
+
+</style>
+
+</head>
+
+<body class="bg-gray-100">
+
+<div id="hero" class="hero min-h-[95vh] md:h-[75vh]">
+    <a href="javascript:history.back()"
+class="hidden md:inline-flex absolute top-8 left-8 z-20 items-center gap-2
+bg-white/15 backdrop-blur-xl border border-white/20
+text-white px-4 py-2 rounded-full
+hover:bg-white/25 transition">
+
+<svg xmlns="http://www.w3.org/2000/svg"
+class="w-5 h-5"
+fill="none"
+viewBox="0 0 24 24"
+stroke="currentColor">
+<path stroke-linecap="round"
+stroke-linejoin="round"
+stroke-width="2"
+d="M15 19l-7-7 7-7"/>
+</svg>
+
+<span>Back</span>
+
+</a>
+
+<a href="javascript:history.back()"
+class="md:hidden absolute top-5 right-5 z-20
+w-12 h-12 rounded-full
+bg-white/15 backdrop-blur-xl border border-white/20
+flex items-center justify-center
+text-white hover:bg-white/25 transition">
+
+<svg xmlns="http://www.w3.org/2000/svg"
+class="w-6 h-6"
+fill="none"
+viewBox="0 0 24 24"
+stroke="currentColor">
+<path stroke-linecap="round"
+stroke-linejoin="round"
+stroke-width="2"
+d="M15 19l-7-7 7-7"/>
+</svg>
+
+</a>
+
+<div class="absolute inset-0 z-10 flex items-end">
+
+<div class="max-w-6xl mx-auto w-full px-5 sm:px-6 pb-24 sm:pb-16 md:pb-20 text-white">
+<p id="location"
+class="uppercase tracking-widest text-sm opacity-80"></p>
+
+<h1
+id="title"
+class="text-4xl sm:text-5xl md:text-6xl font-black mt-3 leading-tight">
+
+Loading...
+
+</h1>
+
+<p
+id="description"
+class="max-w-2xl mt-4 text-base sm:text-lg opacity-90 leading-7">
+
+</p>
+
+<div class="flex flex-col sm:flex-row flex-wrap gap-4 mt-8">
+
+<div
+class="bg-white/20 backdrop-blur-md px-5 py-3 rounded-xl">
+
+⏳ <span id="duration"></span>
+
+</div>
+
+<div
+class="bg-white/20 backdrop-blur-md px-5 py-3 rounded-xl">
+
+📍 <span id="heroLocation"></span>
+
+</div>
+
+<a
+href="/website/contact.html"
+
+class="bg-white text-black font-bold px-6 py-3 rounded-xl">
+
+Book Now
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<section class="max-w-6xl mx-auto px-6 py-16">
+
+<div class="grid lg:grid-cols-3 gap-10">
+
+<div class="lg:col-span-2">
+
+<h2 class="text-3xl font-bold">
+
+About This Tour
+
+</h2>
+
+<p
+id="about"
+class="mt-6 text-gray-600 leading-8 whitespace-pre-line">
+
+</p>
+
+</div>
+
+<div>
+
+<div class="bg-white rounded-3xl shadow-xl p-6 sticky top-8">
+
+<h3 class="font-bold text-xl">
+
+Tour Details
+
+</h3>
+
+<div class="mt-6 space-y-4">
+
+<div>
+
+<p class="text-sm text-gray-500">
+
+Duration
+
+</p>
+
+<p id="sideDuration"
+class="font-semibold"></p>
+
+</div>
+
+<div>
+
+<p class="text-sm text-gray-500">
+
+Location
+
+</p>
+
+<p id="sideLocation"
+class="font-semibold"></p>
+
+</div>
+
+<div>
+
+<p class="text-sm text-gray-500">
+
+Category
+
+</p>
+
+<p id="category"
+class="font-semibold"></p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="max-w-6xl mx-auto px-6 pb-16">
+
+<h2 class="text-3xl font-bold mb-8">
+
+Tour Highlights
+
+</h2>
+
+<div
+id="highlights"
+class="grid md:grid-cols-2 gap-5">
+
+</div>
+
+</section>
+
+<section class="max-w-6xl mx-auto px-6 pb-16">
+
+<h2 class="text-3xl font-bold mb-8">
+
+Tour Itinerary
+
+</h2>
+
+<div
+id="timeline"
+class="space-y-6">
+
+</div>
+
+</section>
+
+<section class="max-w-6xl mx-auto px-6 pb-16">
+
+<h2 class="text-3xl font-bold mb-8">
+
+Gallery
+
+</h2>
+
+<div
+id="gallery"
+
+class="grid md:grid-cols-3 gap-4">
+
+</div>
+
+
+</section>
+
+<section class="max-w-6xl mx-auto px-6 pb-20">
+
+    <div class="grid md:grid-cols-2 gap-8">
+
+        <div class="bg-white rounded-3xl shadow-lg p-8">
+
+            <h2 class="text-2xl font-bold text-green-600 mb-6">
+                ✅ Tour Includes
+            </h2>
+
+            <div id="includes" class="space-y-3"></div>
+
+        </div>
+
+        <div class="bg-white rounded-3xl shadow-lg p-8">
+
+            <h2 class="text-2xl font-bold text-red-600 mb-6">
+                ❌ Tour Excludes
+            </h2>
+
+            <div id="excludes" class="space-y-3"></div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import {
+    getFirestore,
+    collection,
+    getDocs
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+const firebaseConfig = {
+    apiKey: "AIzaSyC_2vLQDidqZ1VHFr77TnNgktRgWbkMKBY",
+    authDomain: "voyo-lanka.firebaseapp.com",
+    projectId: "voyo-lanka"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+try{
+
+    const slug = new URLSearchParams(window.location.search).get("slug");
+
+    if(!slug){
+        throw new Error("No slug found in URL.");
+    }
+
+    const snap = await getDocs(collection(db,"tour"));
+
+    let tour = null;
+
+    snap.forEach(doc=>{
+
+        const data = doc.data();
+
+        if(data.slug === slug){
+
+            tour = data;
+
+        }
+
+    });
+
+    if(!tour){
+
+        throw new Error("Tour not found.");
+
+    }
+
+    console.log(tour);
+
+    document.title = tour.title || "";
+
+    document.getElementById("hero").style.backgroundImage = `url(${tour.image || ""})`;
+
+    document.getElementById("title").innerText = tour.title || "";
+
+    document.getElementById("description").innerText = tour.description || "";
+
+    document.getElementById("about").innerText = tour.about || "";
+
+    document.getElementById("duration").innerText = tour.duration || "-";
+
+    document.getElementById("heroLocation").innerText = tour.location || tour.area || "";
+
+    document.getElementById("location").innerText = tour.area || "";
+
+    document.getElementById("sideDuration").innerText = tour.duration || "-";
+
+    document.getElementById("sideLocation").innerText = tour.location || tour.area || "";
+
+    document.getElementById("category").innerText = tour.category || "";
+
+
+
+    /* ---------------- HIGHLIGHTS ---------------- */
+
+    const highlights = document.getElementById("highlights");
+
+    highlights.innerHTML = "";
+
+    (tour.highlights || []).forEach(item=>{
+
+        highlights.innerHTML += `
+        <div class="bg-white rounded-2xl shadow p-6">
+            <div class="flex gap-4">
+                <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
+                    ⭐
+                </div>
+                <p>${item}</p>
+            </div>
+        </div>
+        `;
+
+    });
+
+
+
+    /* ---------------- ITINERARY ---------------- */
+
+    const timeline = document.getElementById("timeline");
+
+    timeline.innerHTML = "";
+
+    (tour.itinerary || []).forEach((stop,index)=>{
+
+        timeline.innerHTML += `
+        <div class="flex gap-4">
+
+            <div class="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center">
+                ${index+1}
+            </div>
+
+            <div class="bg-white rounded-xl shadow p-5 flex-1">
+
+                <h3 class="font-bold text-lg">
+                    ${stop.title}
+                </h3>
+
+                <p class="text-gray-600 mt-2">
+                    ${stop.description}
+                </p>
+
+            </div>
+
+        </div>
+        `;
+
+    });
+
+
+
+    /* ---------------- GALLERY ---------------- */
+
+    const gallery = document.getElementById("gallery");
+
+    gallery.innerHTML = "";
+
+    (tour.gallery || []).forEach(img=>{
+
+        gallery.innerHTML += `
+        <img
+            src="${img}"
+            class="rounded-2xl h-64 w-full object-cover">
+        `;
+
+    });
+
+
+
+    /* ---------------- INCLUDES ---------------- */
+
+    const includesBox = document.getElementById("includes");
+
+    includesBox.innerHTML = "";
+
+    (tour.includes || []).forEach(item=>{
+
+        includesBox.innerHTML += `
+        <div class="flex items-center gap-3">
+
+            <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center">
+                ✅
+            </div>
+
+            <p>${item}</p>
+
+        </div>
+        `;
+
+    });
+
+
+
+    /* ---------------- EXCLUDES ---------------- */
+
+    const excludesBox = document.getElementById("excludes");
+
+    excludesBox.innerHTML = "";
+
+    (tour.excludes || []).forEach(item=>{
+
+        excludesBox.innerHTML += `
+        <div class="flex items-center gap-3">
+
+            <div class="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center">
+                ❌
+            </div>
+
+            <p>${item}</p>
+
+        </div>
+        `;
+
+    });
+
+}catch(err){
+
+    console.error(err);
+
+    document.body.innerHTML = `
+    <div class="min-h-screen flex items-center justify-center">
+
+        <div class="bg-white p-10 rounded-3xl shadow-xl text-center">
+
+            <h1 class="text-3xl font-bold text-red-600">
+                Error
+            </h1>
+
+            <p class="mt-4">
+                ${err.message}
+            </p>
+
+        </div>
+
+    </div>
+    `;
+
+}
+
+</script>
+
+</body>
+</html>

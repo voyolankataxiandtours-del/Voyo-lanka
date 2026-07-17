@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Airport Pickup & Drop | Voyo Lanka</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<style>
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:system-ui;
+background:#f8fafc;
+}
+
+.hero{
+
+background:
+linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=2000");
+
+background-size:cover;
+background-position:center;
+
+}
+
+.glass{
+
+backdrop-filter:blur(15px);
+background:rgba(255,255,255,.12);
+border:1px solid rgba(255,255,255,.2);
+
+}
+
+.card{
+
+transition:.35s;
+
+}
+
+.card:hover{
+
+transform:translateY(-8px);
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<!-- NAV -->
+<header class="fixed top-0 left-0 w-full z-50 bg-white/70 backdrop-blur-md shadow-sm">
+
+<div class="max-w-[1300px] mx-auto flex justify-between items-center px-4 lg:px-6 py-3">
+
+<a href="index.html">
+<h1 class="font-bold text-lg">LOGO</h1>
+</a>
+
+<!-- Desktop -->
+
+<nav class="hidden md:flex gap-6 text-sm text-gray-600">
+
+<a href="index.html" class="hover:text-black">Home</a>
+<a href="aboutlanka.html" class="hover:text-black">About Sri Lanka</a>
+<a href="daytour.html" class="hover:text-black">Day Tours</a>
+<a href="roundtour.html" class="hover:text-black">Round Tours</a>
+<a href="tailormade.html" class="hover:text-black">Design Your Journey</a>
+<a href="pickupdrop.html" class="text-black font-semibold">Pickup & Drop</a>
+<a href="accommodation.html" class="hover:text-black">Accommodation</a>
+<a href="vehicles.html" class="hover:text-black">Vehicles</a>
+<a href="gallery.html" class="hover:text-black">Gallery</a>
+<a href="contact.html" class="hover:text-black">Contact</a>
+
+</nav>
+
+<a href="contact.html"
+class="hidden md:block bg-black text-white px-4 py-2 rounded">
+Book Now
+</a>
+
+<button id="menuBtn" class="md:hidden">
+
+<i data-lucide="menu" class="w-8 h-8"></i>
+
+</button>
+
+</div>
+
+</header>
+
+<!-- MOBILE MENU -->
+
+<div id="mobileMenu"
+class="fixed inset-0 bg-black/40 backdrop-blur-md z-[999] opacity-0 invisible transition-all duration-300">
+
+<div id="menuPanel"
+class="absolute right-0 top-0 h-full w-[320px] bg-white shadow-2xl translate-x-full transition-transform duration-300">
+
+<div class="flex items-center justify-between p-6 border-b">
+
+<h2 class="font-bold text-xl">
+
+VOYO LANKA
+
+</h2>
+
+<button id="closeMenu">
+
+<i data-lucide="x" class="w-7 h-7"></i>
+
+</button>
+
+</div>
+
+<nav class="flex flex-col p-6 text-lg">
+
+<a href="index.html" class="flex items-center gap-4 py-3">
+    <i data-lucide="house" class="w-5 h-5 flex-shrink-0"></i>
+    <span>Home</span>
+</a>
+
+<a href="aboutlanka.html" class="flex items-center gap-4 py-3 font-semibold">
+    <i data-lucide="palmtree" class="w-5 h-5 flex-shrink-0"></i>
+    <span>About Sri Lanka</span>
+</a>
+
+<a href="daytour.html" class="flex items-center gap-4 py-3">
+    <i data-lucide="map" class="w-5 h-5 flex-shrink-0"></i>
+    <span>Day Tours</span>
+</a>
+
+<a href="roundtour.html" class="flex items-center gap-4 py-3">
+    <i data-lucide="route" class="w-5 h-5 flex-shrink-0"></i>
+    <span>Round Tours</span>
+</a>
+
+<a href="pickupdrop.html" class="flex items-center gap-4 py-3">
+    <i data-lucide="plane" class="w-5 h-5 flex-shrink-0"></i>
+    <span>Pickup & Drop</span>
+</a>
+
+<a href="tailormade.html" class="flex items-center gap-4 py-3">
+    <i data-lucide="sparkles" class="w-5 h-5 flex-shrink-0"></i>
+    <span>Design Journey</span>
+</a>
+
+<a href="accommodation.html" class="flex items-center gap-4 py-3">
+    <i data-lucide="hotel" class="w-5 h-5 flex-shrink-0"></i>
+    <span>Accommodation</span>
+</a>
+
+<a href="vehicles.html" class="flex items-center gap-4 py-3">
+    <i data-lucide="car-front" class="w-5 h-5 flex-shrink-0"></i>
+    <span>Vehicles</span>
+</a>
+
+<a href="gallery.html" class="flex items-center gap-4 py-3">
+    <i data-lucide="image" class="w-5 h-5 flex-shrink-0"></i>
+    <span>Gallery</span>
+</a>
+
+<a href="contact.html" class="flex items-center gap-4 py-3">
+    <i data-lucide="mail" class="w-5 h-5 flex-shrink-0"></i>
+    <span>Contact</span>
+</a>
+
+</nav>
+
+<div class="absolute bottom-0 left-0 w-full p-6 border-t bg-white">
+
+<a href="contact.html"
+class="block bg-black text-white text-center rounded-full py-3 font-semibold">
+Book Now
+</a>
+
+<a href="https://wa.me/94770787881"
+target="_blank"
+class="block mt-3 border rounded-full text-center py-3 font-semibold hover:bg-gray-100 transition">
+WhatsApp
+</a>
+
+</div>
+
+</div>
+
+</div>
+<!-- ================= HERO ================= -->
+
+<section class="hero min-h-screen flex items-center">
+
+<div class="max-w-7xl mx-auto px-6">
+
+<div class="glass rounded-3xl p-10 md:p-16 max-w-3xl">
+
+<span class="text-white font-semibold">
+
+Airport Transfers • Available 24/7
+
+</span>
+
+<h1 class="text-white text-5xl md:text-7xl font-black leading-tight mt-5">
+
+Airport Pickup
+
+<br>
+
+& Drop
+
+</h1>
+
+<p class="text-white/90 text-lg mt-8 leading-8">
+
+Enjoy a smooth and stress-free airport transfer anywhere in Sri Lanka.
+
+Whether you're arriving or departing, our professional drivers and comfortable vehicles ensure a safe, reliable, and relaxing journey every time.
+
+</p>
+
+<div class="flex flex-wrap gap-5 mt-10">
+
+<a
+
+href="contact.html"
+
+class="bg-black text-white px-8 py-4 rounded-full font-bold hover:scale-105 transition">
+
+Book Your Transfer
+
+</a>
+
+<a
+
+href="https://wa.me/94770787881"
+
+class="border border-white text-white px-8 py-4 rounded-full hover:bg-white hover:text-black transition">
+
+WhatsApp Us
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= WHY CHOOSE US ================= -->
+
+<section class="py-24 bg-white">
+
+<div class="max-w-7xl mx-auto px-6">
+
+<div class="text-center mb-16">
+
+<span class="text-white font-semibold uppercase tracking-widest">
+
+Why Choose Us
+
+</span>
+
+<h2 class="text-5xl font-black mt-3">
+
+Travel Without Stress
+
+</h2>
+
+<p class="text-gray-500 max-w-3xl mx-auto mt-6 text-lg">
+
+From the moment you land until you reach your destination, our experienced team ensures a safe, comfortable, and hassle-free airport transfer anywhere in Sri Lanka.
+
+</p>
+
+</div>
+
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+<!-- Card -->
+
+<div class="card bg-gray-50 rounded-3xl p-8 shadow-sm hover:shadow-xl">
+
+<div class="w-16 h-16 rounded-2xl bg-yellow-100 flex items-center justify-center mb-6">
+
+<i data-lucide="plane" class="text-yellow-600 w-8 h-8"></i>
+
+</div>
+
+<h3 class="text-2xl font-bold mb-3">
+
+Flight Tracking
+
+</h3>
+
+<p class="text-gray-600 leading-7">
+
+We monitor your flight in real time, so even if your arrival is delayed, your driver will be there waiting.
+
+</p>
+
+</div>
+
+<!-- Card -->
+
+<div class="card bg-gray-50 rounded-3xl p-8 shadow-sm hover:shadow-xl">
+
+<div class="w-16 h-16 rounded-2xl bg-green-100 flex items-center justify-center mb-6">
+
+<i data-lucide="car-front" class="text-green-600 w-8 h-8"></i>
+
+</div>
+
+<h3 class="text-2xl font-bold mb-3">
+
+Comfortable Vehicles
+
+</h3>
+
+<p class="text-gray-600 leading-7">
+
+Modern air-conditioned vehicles maintained to the highest standards for a smooth and relaxing journey.
+
+</p>
+
+</div>
+
+<!-- Card -->
+
+<div class="card bg-gray-50 rounded-3xl p-8 shadow-sm hover:shadow-xl">
+
+<div class="w-16 h-16 rounded-2xl bg-blue-100 flex items-center justify-center mb-6">
+
+<i data-lucide="user-check" class="text-blue-600 w-8 h-8"></i>
+
+</div>
+
+<h3 class="text-2xl font-bold mb-3">
+
+Professional Drivers
+
+</h3>
+
+<p class="text-gray-600 leading-7">
+
+Friendly, licensed, and experienced local drivers who know every major destination in Sri Lanka.
+
+</p>
+
+</div>
+
+<!-- Card -->
+
+<div class="card bg-gray-50 rounded-3xl p-8 shadow-sm hover:shadow-xl">
+
+<div class="w-16 h-16 rounded-2xl bg-red-100 flex items-center justify-center mb-6">
+
+<i data-lucide="clock-3" class="text-red-600 w-8 h-8"></i>
+
+</div>
+
+<h3 class="text-2xl font-bold mb-3">
+
+24 / 7 Service
+
+</h3>
+
+<p class="text-gray-600 leading-7">
+
+Early morning or late-night arrivals—we're available around the clock to meet your travel needs.
+
+</p>
+
+</div>
+
+<!-- Card -->
+
+<div class="card bg-gray-50 rounded-3xl p-8 shadow-sm hover:shadow-xl">
+
+<div class="w-16 h-16 rounded-2xl bg-purple-100 flex items-center justify-center mb-6">
+
+<i data-lucide="briefcase" class="text-purple-600 w-8 h-8"></i>
+
+</div>
+
+<h3 class="text-2xl font-bold mb-3">
+
+Luggage Assistance
+
+</h3>
+
+<p class="text-gray-600 leading-7">
+
+Our drivers are always happy to help with your luggage, making your airport experience easy and convenient.
+
+</p>
+
+</div>
+
+<!-- Card -->
+
+<div class="card bg-gray-50 rounded-3xl p-8 shadow-sm hover:shadow-xl">
+
+<div class="w-16 h-16 rounded-2xl bg-cyan-100 flex items-center justify-center mb-6">
+
+<i data-lucide="map-pinned" class="text-cyan-600 w-8 h-8"></i>
+
+</div>
+
+<h3 class="text-2xl font-bold mb-3">
+
+Islandwide Transfers
+
+</h3>
+
+<p class="text-gray-600 leading-7">
+
+From Bandaranaike International Airport to any destination across Sri Lanka, we've got you covered.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= OUR VEHICLES ================= -->
+<!-- ================= OUR VEHICLES ================= -->
+
+<section class="py-24 bg-gray-100">
+
+<div class="max-w-7xl mx-auto px-6">
+
+<div class="text-center mb-16">
+
+<span class="text-gray-500 font-semibold uppercase tracking-widest">
+Our Fleet
+</span>
+
+<h2 class="text-5xl font-black mt-3">
+Choose Your Perfect Vehicle
+</h2>
+
+<p class="text-gray-500 max-w-3xl mx-auto mt-6 text-lg">
+Whether you're traveling solo, with family, or in a group, we have comfortable, air-conditioned vehicles for every journey.
+</p>
+
+</div>
+
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+<!-- KDH High Roof -->
+
+<a href="vehicle.html?name=KDH%20High%20Roof&img=/assets/Vehical/highroofkdh.png&type=Van&seats=9&bags=8"
+class="card bg-white rounded-3xl overflow-hidden shadow hover:shadow-2xl block">
+
+<img
+src="/assets/Vehical/highroofkdh.png"
+class="h-64 w-full object-cover">
+
+<div class="p-6">
+
+<h3 class="text-2xl font-bold">
+KDH High Roof
+</h3>
+
+<p class="text-gray-500 mt-3 leading-7">
+Perfect for families and small groups. Spacious seating, large luggage capacity and air-conditioned comfort.
+</p>
+
+</div>
+
+</a>
+
+<!-- KDH Flat Roof -->
+
+<a href="vehicle.html?name=KDH%20Flat%20Roof&img=/assets/Vehical/flatroof%20kdh.png&type=Van&seats=8&bags=6"
+class="card bg-white rounded-3xl overflow-hidden shadow hover:shadow-2xl block">
+
+<img
+src="/assets/Vehical/flatroof kdh.png"
+class="h-64 w-full object-cover">
+
+<div class="p-6">
+
+<h3 class="text-2xl font-bold">
+KDH Flat Roof
+</h3>
+
+<p class="text-gray-500 mt-3 leading-7">
+Comfortable and reliable for airport transfers, sightseeing and long-distance travel.
+</p>
+
+</div>
+
+</a>
+
+<!-- Toyota Axio -->
+
+<a href="vehicle.html?name=Toyota%20Axio&img=/assets/Vehical/axio%20(2).png&type=Car&seats=4&bags=3"
+class="card bg-white rounded-3xl overflow-hidden shadow hover:shadow-2xl block">
+
+<img
+src="/assets/Vehical/axio (2).png"
+class="h-64 w-full object-cover">
+
+<div class="p-6">
+
+<h3 class="text-2xl font-bold">
+Toyota Axio
+</h3>
+
+<p class="text-gray-500 mt-3 leading-7">
+Ideal for couples and solo travelers looking for a smooth and comfortable ride.
+</p>
+
+</div>
+
+</a>
+
+<!-- Corolla / Prius -->
+
+<a href="vehicle.html?name=Toyota%20Prius&img=/assets/Vehical/prius.png&type=Car&seats=4&bags=3"
+class="card bg-white rounded-3xl overflow-hidden shadow hover:shadow-2xl block">
+
+<img
+src="/assets/Vehical/prius.png"
+class="h-64 w-full object-cover">
+
+<div class="p-6">
+
+<h3 class="text-2xl font-bold">
+Corolla / Prius
+</h3>
+
+<p class="text-gray-500 mt-3 leading-7">
+Modern, fuel-efficient and perfect for airport pickups, city transfers and long journeys.
+</p>
+
+</div>
+
+</a>
+
+<!-- Wagon R -->
+
+<a href="vehicle.html?name=Wagon%20R&img=/assets/Vehical/wagon%20r.png&type=Budget&seats=4&bags=2"
+class="card bg-white rounded-3xl overflow-hidden shadow hover:shadow-2xl block">
+
+<img
+src="/assets/Vehical/wagon r.png"
+class="h-64 w-full object-cover">
+
+<div class="p-6">
+
+<h3 class="text-2xl font-bold">
+Wagon R
+</h3>
+
+<p class="text-gray-500 mt-3 leading-7">
+Compact, economical and perfect for individuals or couples with light luggage.
+</p>
+
+</div>
+
+</a>
+
+<!-- Suzuki Every -->
+
+<a href="vehicle.html?name=Suzuki%20Every&img=/assets/Vehical/every.png&type=Budget&seats=6&bags=4"
+class="card bg-white rounded-3xl overflow-hidden shadow hover:shadow-2xl block">
+
+<img
+src="/assets/Vehical/every.png"
+class="h-64 w-full object-cover">
+
+<div class="p-6">
+
+<h3 class="text-2xl font-bold">
+Suzuki Every
+</h3>
+
+<p class="text-gray-500 mt-3 leading-7">
+Great for airport transfers with extra luggage space while remaining affordable and comfortable.
+</p>
+
+</div>
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+<!-- ================= POPULAR DESTINATIONS ================= -->
+
+<section class="py-24 bg-white">
+
+<div class="max-w-7xl mx-auto px-6">
+
+<div class="text-center mb-16">
+
+<span class="text-black font-semibold uppercase tracking-widest">
+
+Popular Transfers
+
+</span>
+
+<h2 class="text-5xl font-black mt-3">
+
+We Drive Anywhere in Sri Lanka
+
+</h2>
+
+<p class="text-gray-500 max-w-3xl mx-auto mt-6 text-lg">
+
+From Bandaranaike International Airport to every corner of Sri Lanka.
+
+</p>
+
+</div>
+
+<div class="grid md:grid-cols-4 gap-6">
+
+<div class="bg-gray-50 rounded-2xl p-6 text-center shadow hover:shadow-lg transition">
+📍 Colombo
+</div>
+
+<div class="bg-gray-50 rounded-2xl p-6 text-center shadow hover:shadow-lg transition">
+📍 Negombo
+</div>
+
+<div class="bg-gray-50 rounded-2xl p-6 text-center shadow hover:shadow-lg transition">
+📍 Kandy
+</div>
+
+<div class="bg-gray-50 rounded-2xl p-6 text-center shadow hover:shadow-lg transition">
+📍 Sigiriya
+</div>
+
+<div class="bg-gray-50 rounded-2xl p-6 text-center shadow hover:shadow-lg transition">
+📍 Nuwara Eliya
+</div>
+
+<div class="bg-gray-50 rounded-2xl p-6 text-center shadow hover:shadow-lg transition">
+📍 Ella
+</div>
+
+<div class="bg-gray-50 rounded-2xl p-6 text-center shadow hover:shadow-lg transition">
+📍 Mirissa
+</div>
+
+<div class="bg-gray-50 rounded-2xl p-6 text-center shadow hover:shadow-lg transition">
+📍 Galle
+</div>
+
+<div class="bg-gray-50 rounded-2xl p-6 text-center shadow hover:shadow-lg transition">
+📍 Bentota
+</div>
+
+<div class="bg-gray-50 rounded-2xl p-6 text-center shadow hover:shadow-lg transition">
+📍 Yala
+</div>
+
+<div class="bg-gray-50 rounded-2xl p-6 text-center shadow hover:shadow-lg transition">
+📍 Trincomalee
+</div>
+
+<div class="bg-gray-50 rounded-2xl p-6 text-center shadow hover:shadow-lg transition">
+📍 Arugam Bay
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT CTA -->
+<section class="py-20 bg-black text-white">
+
+<div class="max-w-4xl mx-auto px-6 text-center">
+
+<span class="inline-block px-4 py-2 rounded-full bg-white/10 text-sm mb-6">
+Need a Custom Transfer?
+</span>
+
+<h2 class="text-4xl md:text-5xl font-bold mb-6">
+Tell Us Where You Need To Go
+</h2>
+
+<p class="text-gray-300 text-lg leading-relaxed max-w-2xl mx-auto mb-10">
+
+Whether it's an airport pickup, hotel transfer, private chauffeur,
+business travel, or a custom journey across Sri Lanka,
+our team is ready to arrange the perfect vehicle for you.
+
+Simply contact us and we'll reply with the best vehicle,
+price and availability.
+
+</p>
+
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+
+<a href="contact.html"
+class="bg-white text-black px-8 py-4 rounded-full font-bold hover:bg-gray-200 transition">
+
+Request a Pickup & Drop →
+
+</a>
+
+<a href="https://wa.me/94770787881"
+target="_blank"
+class="border border-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-black transition">
+
+Chat on WhatsApp
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-white border-t mt-10">
+
+<div class="max-w-6xl mx-auto px-6 py-10 grid md:grid-cols-3 gap-6 text-sm text-gray-600">
+
+<div>
+
+<h2 class="font-bold text-black mb-2">
+Travel Brand
+</h2>
+
+<p>
+Explore Sri Lanka with safe, curated and unforgettable tours.
+</p>
+
+</div>
+
+<div>
+
+<h2 class="font-bold text-black mb-2">
+Quick Links
+</h2>
+
+<div class="flex flex-col gap-1">
+
+<a href="daytour.html">Day Tours</a>
+<a href="roundtour.html">Round Tours</a>
+<a href="pickupdrop.html">Pickup & Drop</a>
+<a href="vehicles.html">Vehicles</a>
+<a href="contact.html">Contact</a>
+
+</div>
+
+</div>
+
+<div>
+
+<h2 class="font-bold text-black mb-2">
+Contact
+</h2>
+
+<a href="mailto:voyolankataxiandtours@gmail.com"
+class="block hover:text-black">
+
+voyolankataxiandtours@gmail.com
+
+</a>
+
+<a href="tel:+94770787881"
+class="block hover:text-black">
+
++94 770 787 881
+
+</a>
+
+<a href="https://wa.me/94770787881"
+class="block hover:text-black">
+
+WhatsApp
+
+</a>
+
+</div>
+
+</div>
+
+<div class="text-center text-xs text-gray-400 py-4 border-t">
+
+© 2026 Voyo Lanka Tours. All rights reserved.
+
+</div>
+
+</footer>
+<script>
+lucide.createIcons();
+
+const menuBtn = document.getElementById("menuBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+const menuPanel = document.getElementById("menuPanel");
+const closeMenu = document.getElementById("closeMenu");
+
+function openMenu() {
+    mobileMenu.classList.remove("opacity-0", "invisible");
+    menuPanel.classList.remove("translate-x-full");
+    document.body.style.overflow = "hidden";
+}
+
+function hideMenu() {
+    menuPanel.classList.add("translate-x-full");
+    mobileMenu.classList.add("opacity-0");
+
+    setTimeout(() => {
+        mobileMenu.classList.add("invisible");
+    }, 300);
+
+    document.body.style.overflow = "";
+}
+
+menuBtn?.addEventListener("click", openMenu);
+closeMenu?.addEventListener("click", hideMenu);
+
+mobileMenu?.addEventListener("click", (e) => {
+    if (e.target === mobileMenu) hideMenu();
+});
+
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") hideMenu();
+});
+</script>
+</body>
+</html>

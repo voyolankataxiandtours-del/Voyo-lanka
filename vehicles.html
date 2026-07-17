@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Vehicles</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+<style>
+.card{
+  transition:.35s;
+}
+.card:hover{
+  transform:translateY(-10px);
+}
+
+/* FIXED UNIFORM CARD LOOK */
+.card img{
+  height: 220px;
+  object-fit: cover;
+}
+
+/* TOGGLE */
+.toggle-wrap{
+  position: relative;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.toggle-btn{
+  position: relative;
+  z-index: 2;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.25s;
+  color: black;
+}
+
+.toggle-btn.active{
+  color: white;
+}
+
+.slider{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 70px;
+  background: black;
+  border-radius: 999px;
+  z-index: 1;
+  transition: 0.35s ease;
+}
+</style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 pt-20">
+
+  <!-- NAV -->
+
+<header class="fixed top-0 left-0 w-full z-50 bg-white/70 backdrop-blur-md shadow-sm">
+
+<div class="max-w-[1300px] mx-auto flex justify-between items-center px-4 lg:px-6 py-3">
+
+<a href="index.html">
+<h1 class="font-bold text-lg">LOGO</h1>
+</a>
+
+<!-- Desktop -->
+
+<nav class="hidden md:flex gap-6 text-sm text-gray-600">
+
+<a href="index.html" class="hover:text-black">Home</a>
+<a href="aboutlanka.html" class="hover:text-black">About Sri Lanka</a>
+<a href="daytour.html" class="hover:text-black">Day Tours</a>
+<a href="roundtour.html" class="hover:text-black">Round Tours</a>
+<a href="tailormade.html" class="hover:text-black">Design Your Journey</a>
+<a href="pickupdrop.html" class="Hover:text-black">Pickup & Drop</a>
+<a href="accommodation.html" class="hover:text-black">Accommodation</a>
+<a href="vehicles.html" class="hover:text-black font-semibold">Vehicles</a>
+<a href="gallery.html" class="hover:text-black">Gallery</a>
+<a href="contact.html" class="hover:text-black">Contact</a>
+
+</nav>
+
+<a href="contact.html"
+class="hidden md:block bg-black text-white px-4 py-2 rounded">
+Book Now
+</a>
+
+<button id="menuBtn" class="md:hidden">
+
+<i data-lucide="menu" class="w-8 h-8"></i>
+
+</button>
+
+</div>
+
+</header>
+
+<!-- MOBILE MENU -->
+
+<div id="mobileMenu"
+class="fixed inset-0 bg-black/40 backdrop-blur-md z-[999] opacity-0 invisible transition-all duration-300">
+
+<div id="menuPanel"
+class="absolute right-0 top-0 h-full w-[320px] bg-white shadow-2xl translate-x-full transition-transform duration-300">
+
+<div class="flex items-center justify-between p-6 border-b">
+
+<h2 class="font-bold text-xl">
+
+VOYO LANKA
+
+</h2>
+
+<button id="closeMenu">
+
+<i data-lucide="x" class="w-7 h-7"></i>
+
+</button>
+
+</div>
+
+<nav class="flex flex-col p-6 text-lg">
+
+<a href="index.html" class="flex items-center gap-4 py-3">
+    <i data-lucide="house" class="w-5 h-5 flex-shrink-0"></i>
+    <span>Home</span>
+</a>
+
+<a href="aboutlanka.html" class="flex items-center gap-4 py-3 font-semibold">
+    <i data-lucide="palmtree" class="w-5 h-5 flex-shrink-0"></i>
+    <span>About Sri Lanka</span>
+</a>
+
+<a href="daytour.html" class="flex items-center gap-4 py-3">
+    <i data-lucide="map" class="w-5 h-5 flex-shrink-0"></i>
+    <span>Day Tours</span>
+</a>
+
+<a href="roundtour.html" class="flex items-center gap-4 py-3">
+    <i data-lucide="route" class="w-5 h-5 flex-shrink-0"></i>
+    <span>Round Tours</span>
+</a>
+
+<a href="pickupdrop.html" class="flex items-center gap-4 py-3">
+    <i data-lucide="plane" class="w-5 h-5 flex-shrink-0"></i>
+    <span>Pickup & Drop</span>
+</a>
+
+<a href="tailormade.html" class="flex items-center gap-4 py-3">
+    <i data-lucide="sparkles" class="w-5 h-5 flex-shrink-0"></i>
+    <span>Design Journey</span>
+</a>
+
+<a href="accommodation.html" class="flex items-center gap-4 py-3">
+    <i data-lucide="hotel" class="w-5 h-5 flex-shrink-0"></i>
+    <span>Accommodation</span>
+</a>
+
+<a href="vehicles.html" class="flex items-center gap-4 py-3">
+    <i data-lucide="car-front" class="w-5 h-5 flex-shrink-0"></i>
+    <span>Vehicles</span>
+</a>
+
+<a href="gallery.html" class="flex items-center gap-4 py-3">
+    <i data-lucide="image" class="w-5 h-5 flex-shrink-0"></i>
+    <span>Gallery</span>
+</a>
+
+<a href="contact.html" class="flex items-center gap-4 py-3">
+    <i data-lucide="mail" class="w-5 h-5 flex-shrink-0"></i>
+    <span>Contact</span>
+</a>
+
+</nav>
+
+<div class="absolute bottom-0 left-0 w-full p-6 border-t bg-white">
+
+<a href="contact.html"
+class="block bg-black text-white text-center rounded-full py-3 font-semibold">
+Book Now
+</a>
+
+<a href="https://wa.me/94770787881"
+target="_blank"
+class="block mt-3 border rounded-full text-center py-3 font-semibold hover:bg-gray-100 transition">
+WhatsApp
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- HERO -->
+<section class="bg-[url('https://images.unsplash.com/photo-1503376780353-7e6692767b70')] bg-cover bg-center min-h-[100vh] flex items-center">
+  <div class=" w-full h-full flex items-center">
+    <div class="max-w-6xl mx-auto px-6 text-white">
+      <h1 class="text-5xl font-bold mb-4">Our Vehicle Fleet</h1>
+      <p class="text-gray-200">Comfortable, safe transport across Sri Lanka</p>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- FILTERS -->
+<section class="py-10">
+  <div class="toggle-wrap max-w-4xl mx-auto relative">
+
+    <div id="slider" class="slider"></div>
+
+    <button class="toggle-btn active" onclick="filter('all', this)">All</button>
+    <button class="toggle-btn" onclick="filter('van', this)">Vans</button>
+    <button class="toggle-btn" onclick="filter('car', this)">Cars</button>
+    <button class="toggle-btn" onclick="filter('budget', this)">Budget</button>
+    <button class="toggle-btn" onclick="filter('tuk', this)">Tuk Tuk</button>
+
+  </div>
+</section>
+
+
+
+<!-- INTRO -->
+<section class="max-w-6xl mx-auto px-6 pb-10">
+  <h2 class="text-3xl font-bold mb-4">Choose Your Ride</h2>
+  <p class="text-gray-600">
+    All vehicles are grouped clearly for easy selection.
+  </p>
+</section>
+
+<!-- GRID -->
+<section class="max-w-7xl mx-auto px-6 pb-24 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+<!-- VAN -->
+<a href="vehicle.html?name=KDH%20High%20Roof&img=/assets/Vehical/highroofkdh.png&type=Van&seats=9&bags=8"
+   class="card van bg-white rounded-3xl overflow-hidden shadow block">
+  <img src="/assets/Vehical/highroofkdh.png">
+  <div class="p-6">
+    <h3 class="font-bold">KDH High Roof</h3>
+    <p class="text-sm text-gray-600 mt-2">Large group travel van.</p>
+  </div>
+</a>
+
+<!-- VAN 2 -->
+<a href="vehicle.html?name=KDH%20Flat%20Roof&img=/assets/Vehical/flatroof%20kdh.png&type=Van&seats=8&bags=6"
+   class="card van bg-white rounded-3xl overflow-hidden shadow block">
+  <img src="/assets/Vehical/flatroof kdh.png">
+  <div class="p-6">
+    <h3 class="font-bold">KDH Flat Roof</h3>
+    <p class="text-sm text-gray-600 mt-2">Comfort long-distance van.</p>
+  </div>
+</a>
+
+<!-- CAR -->
+<a href="vehicle.html?name=Toyota%20Axio&img=/assets/Vehical/axio%20(2).png&type=Car&seats=4&bags=3"
+   class="card car bg-white rounded-3xl overflow-hidden shadow block">
+  <img src="/assets/Vehical/axio (2).png">
+  <div class="p-6">
+    <h3 class="font-bold">Toyota Axio</h3>
+    <p class="text-sm text-gray-600 mt-2">Private comfortable travel.</p>
+  </div>
+</a>
+
+<!-- CAR 2 -->
+<a href="vehicle.html?name=Toyota%20Prius&img=/assets/Vehical/prius.png&type=Car&seats=4&bags=3"
+   class="card car bg-white rounded-3xl overflow-hidden shadow block">
+  <img src="/assets/Vehical/prius.png">
+  <div class="p-6">
+    <h3 class="font-bold">Corolla / Prius</h3>
+    <p class="text-sm text-gray-600 mt-2">Smooth hybrid travel.</p>
+  </div>
+</a>
+
+
+
+<!-- WAGON R -->
+<a href="vehicle.html?name=Wagon%20R&img=/assets/Vehical/wagon%20r.png&type=Budget&seats=4&bags=2"
+   class="card budget bg-white rounded-3xl overflow-hidden shadow block">
+  <img src="/assets/Vehical/wagon r.png">
+  <div class="p-6">
+    <h3 class="font-bold">Wagon R</h3>
+    <p class="text-sm text-gray-600 mt-2">Small family car.</p>
+  </div>
+</a>
+
+<!-- EVERY -->
+<a href="vehicle.html?name=Suzuki%20Every&img=/assets/Vehical/every.png&type=Budget&seats=6&bags=4"
+   class="card budget bg-white rounded-3xl overflow-hidden shadow block">
+  <img src="/assets/Vehical/every.png">
+  <div class="p-6">
+    <h3 class="font-bold">Suzuki Every</h3>
+    <p class="text-sm text-gray-600 mt-2">Small group transport.</p>
+  </div>
+</a>
+
+
+
+<!-- TUK -->
+<a href="vehicle.html?name=Tour%20Tuk%20Tuk&img=https://images.unsplash.com/photo-1561361513-2d000a50f0dc&type=TukTuk&seats=3&bags=2"
+   class="card tuk bg-white rounded-3xl overflow-hidden shadow block">
+  <img src="https://images.unsplash.com/photo-1561361513-2d000a50f0dc">
+  <div class="p-6">
+    <h3 class="font-bold">Tour Tuk Tuk</h3>
+    <p class="text-sm text-gray-600 mt-2">City experience ride.</p>
+  </div>
+</a>
+
+</section>
+
+<section class="max-w-6xl mx-auto px-6 py-4 text-center border-t border-b border-gray-200">
+
+  <p class="text-xs tracking-[6px] text-gray-500">AYUBOWAN</p>
+
+</section>
+
+ <footer class="bg-white border-t mt-10">
+  <div class="max-w-6xl mx-auto px-6 py-10 grid md:grid-cols-3 gap-6 text-sm text-gray-600">
+
+    <div>
+      <h2 class="font-bold text-black mb-2">Travel Brand</h2>
+      <p>Explore Sri Lanka with safe, curated and unforgettable tours.</p>
+    </div>
+
+    <div>
+      <h2 class="font-bold text-black mb-2">Quick Links</h2>
+      <div class="flex flex-col gap-1">
+        <a href="daytour.html">Day Tours</a>
+        <a href="roundtour.html">Round Tours</a>
+        <a href="tailormade.html">Tailor Made</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+
+    <div>
+  <h2 class="font-bold text-black mb-2">Contact</h2>
+
+  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=voyolankataxiandtours@gmail.com"
+   target="_blank" class="block hover:text-black transition">
+    Email: info@travel.com
+  </a>
+
+  <a href="tel:+94770787881" class="block hover:text-black transition">
+    Phone: +94 770 787 881
+  </a>
+
+  <a href="https://wa.me/94770787881" target="_blank" class="block hover:text-black transition">
+    WhatsApp: +94 770 787 881
+  </a>
+</div>
+  </div>
+
+  <div class="text-center text-xs text-gray-400 py-4 border-t">
+    © 2026 Voyo Lanka Tours. All rights reserved.
+  </div>
+</footer>
+
+<script>
+const buttons = document.querySelectorAll(".toggle-btn");
+const slider = document.getElementById("slider");
+
+function setSlider(btn){
+  slider.style.width = btn.offsetWidth + "px";
+  slider.style.left = btn.offsetLeft + "px";
+}
+
+function filter(type, btn){
+
+  document.querySelectorAll(".card").forEach(item=>{
+    item.style.display = (type==="all" || item.classList.contains(type)) ? "block":"none";
+  });
+
+  buttons.forEach(b => b.classList.remove("active"));
+  btn.classList.add("active");
+
+  setSlider(btn);
+}
+
+window.onload = () => {
+  setSlider(document.querySelector(".toggle-btn.active"));
+};
+
+lucide.createIcons();
+
+const menuBtn = document.getElementById("menuBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+const menuPanel = document.getElementById("menuPanel");
+const closeMenu = document.getElementById("closeMenu");
+
+function openMenu() {
+    mobileMenu.classList.remove("opacity-0", "invisible");
+    menuPanel.classList.remove("translate-x-full");
+    document.body.style.overflow = "hidden";
+}
+
+function hideMenu() {
+    menuPanel.classList.add("translate-x-full");
+    mobileMenu.classList.add("opacity-0");
+
+    setTimeout(() => {
+        mobileMenu.classList.add("invisible");
+    }, 300);
+
+    document.body.style.overflow = "";
+}
+
+menuBtn.onclick = openMenu;
+closeMenu.onclick = hideMenu;
+
+mobileMenu.onclick = (e) => {
+    if (e.target === mobileMenu) hideMenu();
+};
+
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") hideMenu();
+});
+</script>
+
+</body>
+</html>

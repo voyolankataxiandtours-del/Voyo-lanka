@@ -278,15 +278,18 @@ WhatsApp
     <section class="hero-image relative mb-24 flex min-h-screen items-center text-white overflow-hidden">
 
   <!-- VIDEO BACKGROUND -->
-  <video
-    class="absolute inset-0 h-full w-full object-cover"
+<!-- CLOUDINARY VIDEO BACKGROUND -->
+<video
+    id="heroVideo"
     autoplay
     muted
     loop
     playsinline
-  >
-    <source src="/assets/home video.mp4" type="video/mp4" />
-  </video>
+    preload="auto"
+    class="absolute inset-0 w-full h-full object-cover">
+
+    <source src="https://res.cloudinary.com/dtbxzd7ux/video/upload/v1784302071/home_video_z48nvf.mp4" type="video/mp4">
+</video>
 
   <!-- DARK OVERLAY (keeps text readable) -->
   <div class="absolute inset-0 bg-black/60"></div>
@@ -719,6 +722,16 @@ hideMenu();
 
 lucide.createIcons();
 
+</script>
+
+<script>
+window.addEventListener("load", () => {
+    const video = document.getElementById("heroVideo");
+
+    video.play().catch(err => {
+        console.log(err);
+    });
+});
 </script>
 </body>
 </html>

@@ -322,36 +322,54 @@ const t = doc.data();
 console.log("Document:", doc.id);
 console.log("Price:", t.price);
 
-      html += `
-      <div class="bg-white rounded-xl shadow overflow-hidden hover:shadow-xl transition">
+     html += `
+<div class="bg-white rounded-xl shadow overflow-hidden hover:shadow-xl transition">
 
+    <div class="h-52 overflow-hidden">
         <img
-          src="${t.image}"
-          loading="lazy"
-          class="h-48 w-full object-cover">
+            src="${t.image}"
+            loading="lazy"
+            class="w-full h-full object-cover hover:scale-110 transition duration-500">
+    </div>
 
-        <div class="p-4">
+    <div class="p-5">
 
-          <h3 class="font-bold text-xl">
+        <h3 class="text-xl font-bold">
             ${t.title}
-          </h3>
+        </h3>
 
-          <p class="text-sm text-gray-500 mt-2 line-clamp-3">
+        <p class="text-sm text-gray-500 mt-2 line-clamp-3">
             ${t.description}
-          </p>
+        </p>
 
-          <a
-            href="roundtourdetail.html?slug=${t.slug}"
-            class="inline-block mt-4 font-semibold underline">
+        <div class="flex items-center justify-between mt-6">
 
-            Read More →
+            <div>
 
-          </a>
+                <p class="text-xs uppercase text-gray-400">
+                    Starting From
+                </p>
+
+                <h2 class="text-2xl font-bold text-emerald-600">
+                    $${t.price || 0}
+                </h2>
+
+            </div>
+
+            <a
+                href="roundtourdetail.html?slug=${t.slug}"
+                class="bg-black text-white px-5 py-2 rounded-full hover:bg-emerald-600 transition">
+
+                View Tour →
+
+            </a>
 
         </div>
 
-      </div>
-      `;
+    </div>
+
+</div>
+`;
 
     });
 

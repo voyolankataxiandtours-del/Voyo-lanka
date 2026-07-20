@@ -69,7 +69,6 @@ d="M15 19l-7-7 7-7"/>
 
 <span>Back</span>
 
-</a>
 
 <a href="javascript:history.back()"
 class="md:hidden absolute top-5 right-5 z-20
@@ -116,6 +115,13 @@ class="max-w-2xl mt-4 text-base sm:text-lg opacity-90 leading-7">
 </p>
 
 <div class="flex flex-col sm:flex-row sm:flex-wrap gap-4 mt-8">
+
+   <div
+class="bg-green-500 text-white font-bold px-6 py-3 rounded-xl text-center w-full sm:w-auto">
+
+💵 From $<span id="price"></span>
+
+</div>
 
 <div
 class="bg-white text-black font-bold px-6 py-3 rounded-xl text-center w-full sm:w-auto">
@@ -178,7 +184,16 @@ Tour Details
 
 </h3>
 
-<div class="mt-6 space-y-4">
+<div>
+
+<p class="text-sm text-gray-500">
+Price
+</p>
+
+<p id="sidePrice"
+class="font-semibold text-green-600 text-xl"></p>
+
+</div>
 
 <div>
 
@@ -368,6 +383,11 @@ try{
     document.getElementById("about").innerText = tour.about || "";
 
     document.getElementById("duration").innerText = tour.duration || "-";
+
+   document.getElementById("price").innerText = tour.price || "0";
+
+      document.getElementById("sidePrice").innerText =
+      "$" + (tour.price || "0");
 
     document.getElementById("heroLocation").innerText = tour.location || tour.area || "";
 

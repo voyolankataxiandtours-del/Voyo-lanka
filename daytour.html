@@ -322,7 +322,10 @@ const snapshot = await getDocs(q);
   if (loading) loading.style.display = "none";
 
   snapshot.forEach((doc) => {
-    const t = doc.data();
+   const t = doc.data();
+
+console.log("Document:", doc.id);
+console.log("Price:", t.price);
 
     const card = document.createElement("div");
     card.className = "card bg-white rounded-xl shadow overflow-hidden";

@@ -317,8 +317,10 @@ async function loadTours() {
     let html = "";
 
     snap.forEach(doc => {
+const t = doc.data();
 
-      const t = doc.data();
+console.log("Document:", doc.id);
+console.log("Price:", t.price);
 
       html += `
       <div class="bg-white rounded-xl shadow overflow-hidden hover:shadow-xl transition">

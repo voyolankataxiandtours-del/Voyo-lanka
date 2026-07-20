@@ -327,24 +327,48 @@ const snapshot = await getDocs(q);
     const card = document.createElement("div");
     card.className = "card bg-white rounded-xl shadow overflow-hidden";
 
-    card.innerHTML = `
-      <div class="h-48 bg-gray-200">
-        <img src="${t.image}" class="w-full h-full object-cover"/>
-      </div>
+  card.innerHTML = `
+<div class="h-52 overflow-hidden">
+    <img src="${t.image}" class="w-full h-full object-cover hover:scale-110 transition duration-500">
+</div>
 
-      <div class="p-4">
-        <h3 class="font-bold">${t.title}</h3>
+<div class="p-5">
 
-        <p class="text-sm text-gray-500 mt-1">
-          ${t.description}
-        </p>
+    <h3 class="text-xl font-bold">
+        ${t.title}
+    </h3>
+
+    <p class="text-gray-500 text-sm mt-2 line-clamp-3">
+        ${t.description}
+    </p>
+
+    <div class="flex items-center justify-between mt-6">
+
+        <div>
+
+            <p class="text-xs uppercase text-gray-400">
+                Starting From
+            </p>
+
+            <h2 class="text-2xl font-bold text-emerald-600">
+
+                $${t.price || 0}
+
+            </h2>
+
+        </div>
 
         <a href="tour-detail.html?slug=${t.slug}"
-           class="inline-block mt-4 text-sm font-semibold underline">
-          Read More →
+        class="bg-black text-white px-5 py-2 rounded-full hover:bg-emerald-600 transition">
+
+            View Tour →
+
         </a>
-      </div>
-    `;
+
+    </div>
+
+</div>
+`;
 
     grid.appendChild(card);
   });
